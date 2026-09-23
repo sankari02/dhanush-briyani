@@ -1,0 +1,74 @@
+﻿.db-reviews {
+  --review-gap: 28px;
+  --review-width: min(560px, calc((100vw - 120px) / 2));
+  overflow: hidden;
+  padding: 64px 0 36px;
+  color: #fffdf9;
+  background: radial-gradient(circle at 80% 30%, rgba(210,166,90,.07), transparent 35%), #160e0a;
+}
+.db-reviews-header { padding: 0 24px; text-align: center; }
+#root .db-reviews-label { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; font: 600 10px/1.7 "Manrope", sans-serif; letter-spacing: 3px; color: #d2a65a; }
+.db-reviews-label::before, .db-reviews-label::after { content: ""; width: 32px; height: 1px; background: #d2a65a; opacity: .65; }
+#root .db-reviews-header h2 { font: 500 clamp(44px, 4.4vw, 64px)/1.02 "Cormorant Garamond", serif; letter-spacing: -.02em; }
+#root .db-reviews-header h2 em { color: #d2a65a; font-style: italic; }
+#root .db-reviews-subtitle { margin: 18px auto 0; font: 400 13px/1.7 "Manrope", sans-serif; color: rgba(255,253,249,.65); }
+.db-reviews-window {
+  margin-top: 32px;
+  padding: 8px 0 16px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
+.db-reviews-window:focus-visible { outline: 1px solid #d2a65a; outline-offset: -2px; }
+.db-reviews-track { display: flex; width: max-content; animation: db-reviews-reel 36s linear infinite; }
+.db-reviews-group { display: flex; align-items: stretch; flex-shrink: 0; gap: var(--review-gap); margin: 0; padding: 0 var(--review-gap) 0 0; list-style: none; }
+.db-reviews-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 var(--review-width);
+  width: var(--review-width);
+  min-height: 310px;
+  padding: 38px 40px;
+  border: 1px solid rgba(210,166,90,.22);
+  border-radius: 12px;
+  background: #21140f;
+  transition: transform 250ms ease, border-color 250ms ease, background 250ms ease, box-shadow 250ms ease;
+}
+.db-reviews-card::before { content: ""; position: absolute; top: -1px; left: 40px; width: 70px; height: 2px; background: #d2a65a; }
+.db-reviews-quote { position: absolute; z-index: -1; top: 12px; right: 30px; font: 500 100px/1 "Cormorant Garamond", serif; color: rgba(210,166,90,.1); pointer-events: none; }
+.db-reviews-card-top { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+.db-reviews-number { font: 500 12px/1 "Manrope", sans-serif; letter-spacing: 2px; color: #d2a65a; }
+.db-reviews-stars { font-size: 12px; line-height: 1; letter-spacing: 4px; color: #d2a65a; }
+.db-reviews-card blockquote { margin: 0 0 24px; font: 500 29px/1.2 "Cormorant Garamond", serif; }
+.db-reviews-attribution { margin-top: auto; }
+#root .db-reviews-name { font: 600 12px/1.7 "Manrope", sans-serif; }
+#root .db-reviews-event { margin-top: 5px; font: 400 9px/1.7 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #d2a65a; }
+#root .db-reviews-notice { margin: 14px 24px 0; text-align: center; font: 400 10px/1.7 "Manrope", sans-serif; color: rgba(255,253,249,.65); }
+.db-reviews-window:hover .db-reviews-track, .db-reviews-window:focus-within .db-reviews-track { animation-play-state: paused; }
+@media (hover: hover) {
+  .db-reviews-card:hover { transform: translateY(-5px); border-color: rgba(210,166,90,.55); background: #2a1b13; box-shadow: 0 8px 22px rgba(0,0,0,.18); }
+}
+@keyframes db-reviews-reel { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (min-width: 1600px) {
+  .db-reviews { --review-width: calc((100vw - 160px) / 2); }
+}
+@media (max-width: 1000px) {
+  .db-reviews { --review-width: 72vw; --review-gap: 24px; }
+}
+@media (max-width: 600px) {
+  .db-reviews { --review-width: 86vw; --review-gap: 18px; padding: 52px 0 30px; }
+  #root .db-reviews-header h2 { font-size: 44px; }
+  #root .db-reviews-subtitle { max-width: 300px; font-size: 12px; }
+  .db-reviews-window { margin-top: 26px; mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent); }
+  .db-reviews-card { padding: 30px 26px; min-height: 330px; }
+  .db-reviews-card::before { left: 26px; }
+  .db-reviews-card blockquote { font-size: 27px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-reviews-window { overflow-x: auto; mask-image: none; padding-inline: 24px; scrollbar-color: #d2a65a #21140f; }
+  .db-reviews-track { animation: none; }
+  .db-reviews-group[aria-hidden="true"] { display: none; }
+  .db-reviews-card { transition: none; }
+  .db-reviews-card:hover { transform: none; }
+}

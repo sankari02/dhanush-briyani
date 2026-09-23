@@ -1,0 +1,67 @@
+.event-marquee {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #d2a65a;
+  color: #160e0a;
+  border-block: 1px solid rgba(22, 14, 10, .15);
+}
+
+/* Equal groups include their trailing separator and spacing. Moving by half
+   the track width lands exactly on the duplicate, including on wide screens. */
+.event-marquee-track {
+  display: flex;
+  width: max-content;
+  flex-shrink: 0;
+  animation: event-marquee-scroll 32s linear infinite;
+}
+
+.event-marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+  min-width: 100vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.event-marquee-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font: 500 27px/1.2 "Cormorant Garamond", serif;
+}
+
+.event-marquee-name { transition: opacity 200ms ease; }
+.event-marquee-dot { margin-inline: 28px; font-size: 17px; }
+
+@keyframes event-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.event-marquee:focus-within .event-marquee-track { animation-play-state: paused; }
+.event-marquee:focus-visible { outline: 2px solid #160e0a; outline-offset: -5px; }
+
+@media (hover: hover) {
+  .event-marquee:hover .event-marquee-track { animation-play-state: paused; }
+  .event-marquee-name:hover { opacity: .7; }
+}
+
+@media (max-width: 600px) {
+  .event-marquee { height: 62px; }
+  .event-marquee-item { font-size: 22px; }
+  .event-marquee-dot { margin-inline: 22px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-marquee { overflow-x: auto; }
+  .event-marquee-track { animation: none; }
+  .event-marquee-group[aria-hidden="true"] { display: none; }
+  .event-marquee-name { transition: none; }
+}

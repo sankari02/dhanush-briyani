@@ -1,0 +1,5 @@
+﻿/* Shared wrapper uses the original About sticky geometry and breakpoints. */
+.db-services-page.inner-page-shell { padding-top: 104px; background: linear-gradient(#160e0a 104px, var(--cream) 104px); }
+.about-page-reveal > .inner-page-reveal-content { position: relative; z-index: 2; }
+.inner-page-services-content { background: var(--cream); }
+@media (max-width: 900px) { .db-services-page.inner-page-shell { padding-top: 78px; background: linear-gradient(#160e0a 78px, var(--cream) 78px); } }

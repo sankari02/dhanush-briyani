@@ -1,0 +1,49 @@
+.db-footer { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: 80px 7% 30px; background: #351419; color: #fffdf9; }
+.db-footer-inner { position: relative; z-index: 1; max-width: 1440px; margin-inline: auto; }
+.db-footer-grid { display: grid; grid-template-columns: 1.35fr .75fr 1fr 1fr; gap: clamp(24px, 3.5vw, 58px); }
+.db-footer-column { min-width: 0; }
+.db-footer-brand-link { display: flex; align-items: center; gap: 16px; width: fit-content; }
+.db-footer-brand-link img { width: 70px; height: 70px; object-fit: contain; border-radius: 50%; }
+#root .db-footer-brand h2 { font: 500 clamp(38px, 3.2vw, 48px)/1 "Cormorant Garamond", serif; }
+#root .db-footer-tagline { margin-top: 20px; font: 500 11px/1.7 "Manrope", sans-serif; letter-spacing: 2px; color: #d2a65a; }
+#root .db-footer-description { max-width: 310px; margin-top: 16px; font: 400 16px/1.8 "Manrope", sans-serif; color: rgba(255,253,249,.65); }
+.db-footer-socials { display: flex; gap: 12px; margin-top: 24px; }
+.db-footer-socials a { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(210,166,90,.3); border-radius: 50%; color: #d2a65a; transition: background 300ms ease, color 300ms ease, transform 300ms ease; }
+.db-footer svg { width: 21px; height: 21px; }
+.db-footer-socials a:hover { background: #d2a65a; color: #160e0a; transform: translateY(-3px); }
+#root .db-footer-column h3 { margin: 0 0 26px; font: 600 26px/1.2 "Cormorant Garamond", serif; letter-spacing: 1px; }
+.db-footer-column h3::before { content: ""; display: block; width: 28px; height: 1px; margin-bottom: 19px; background: #d2a65a; opacity: .7; }
+.db-footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.db-footer-links a { display: inline-flex; align-items: baseline; gap: 10px; font: 500 23px/1.35 "Cormorant Garamond", serif; color: rgba(255,253,249,.75); transition: color 300ms ease, transform 300ms ease; }
+.db-footer-links a > span { color: #d2a65a; font-size: 17px; }
+.db-footer-links a:hover { color: #d2a65a; transform: translateX(4px); }
+.db-footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 23px; }
+.db-footer-contact-item > svg { flex: 0 0 20px; margin-top: 2px; color: #d2a65a; }
+.db-footer-contact-item div { min-width: 0; }
+.db-footer-contact-item div > span { display: block; margin-bottom: 8px; font: 600 11px/1.5 "Manrope", sans-serif; letter-spacing: 1.5px; color: #d2a65a; }
+.db-footer-contact-item a, #root .db-footer-contact-item p { font: 400 16px/1.7 "Manrope", sans-serif; color: rgba(255,253,249,.75); overflow-wrap: anywhere; }
+.db-footer-contact-item a { display: inline-block; background: linear-gradient(#d2a65a, #d2a65a) left bottom / 0 1px no-repeat; transition: background-size 300ms ease, color 300ms ease; }
+.db-footer-contact-item a:hover { background-size: 100% 1px; color: #d2a65a; }
+#root .db-footer-signature { margin: 36px 0 20px; font: 500 11px/1.7 "Manrope", sans-serif; letter-spacing: 3px; color: #d2a65a; }
+.db-footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(210,166,90,.16); }
+#root .db-footer-bottom p { font: 400 11px/1.7 "Manrope", sans-serif; letter-spacing: 1px; color: rgba(255,253,249,.55); }
+#root .db-footer-bottom button { display: inline-flex; align-items: center; gap: 18px; padding: 10px 0; border: 0; background: transparent; color: #d2a65a; font: 600 12px/1.5 "Manrope", sans-serif; letter-spacing: 2px; cursor: pointer; }
+.db-footer-bottom button span { font-size: 20px; }
+.db-footer :is(a, button):focus-visible { outline: 2px solid #d2a65a; outline-offset: 5px; }
+.db-footer-watermark { position: absolute; z-index: -1; left: 24%; bottom: 70px; font: 500 clamp(120px, 16vw, 260px)/1 "Cormorant Garamond", serif; opacity: .025; pointer-events: none; }
+.db-footer .db-footer-art { position: absolute; z-index: -1; right: -25px; bottom: 0; width: 480px; height: 400px; color: #d2a65a; opacity: .04; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .db-footer-animate .db-footer-column { opacity: 0; transform: translateY(25px); transition: opacity 800ms ease var(--footer-delay, 0ms), transform 800ms cubic-bezier(.22,1,.36,1) var(--footer-delay, 0ms); }
+  .db-footer-column:nth-child(2) { --footer-delay: 100ms; }
+  .db-footer-column:nth-child(3) { --footer-delay: 200ms; }
+  .db-footer-column:nth-child(4) { --footer-delay: 300ms; }
+  .db-footer-animate .db-footer-column.is-visible, .db-footer-animate .db-footer-column:focus-within { opacity: 1; transform: none; }
+}
+@media (max-width: 1100px) { .db-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; } }
+@media (max-width: 600px) {
+  .db-footer { padding: 52px 24px 24px; }
+  .db-footer-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .db-footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .db-footer-watermark { left: 0; bottom: 100px; }
+}
+@media (prefers-reduced-motion: reduce) { .db-footer *, .db-footer *::before { transition: none !important; animation: none !important; } }

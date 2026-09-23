@@ -1,0 +1,33 @@
+.cursor-follower {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99998;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: width 250ms ease, height 250ms ease, opacity 250ms ease;
+}
+.cursor-follower > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #d2a65a;
+  box-shadow: 0 0 12px rgba(210, 166, 90, .25);
+  transition: transform 150ms ease;
+}
+.cursor-follower.is-visible { opacity: 1; }
+.cursor-follower.is-interactive { width: 18px; height: 18px; }
+.cursor-follower.is-visible.is-interactive { opacity: .65; }
+.cursor-follower.is-pressed > span { transform: scale(.7); }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .cursor-follower { display: block; }
+}
+
+/* Compatibility with the previous loader if it is restored. Hide even while
+   the overlay fades, keeping its logo presentation free of decorations. */
+body:has(.page-transition) .cursor-follower { opacity: 0; }

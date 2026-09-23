@@ -1,0 +1,172 @@
+.db-services-preview, .db-services-page { background: var(--cream); color: var(--espresso); }
+.db-services-container { width: min(1240px, calc(100% - 96px)); margin-inline: auto; }
+.db-services-preview { padding: 12px 0 55px; background: #fffdf9; }
+.db-services-label { display: flex; align-items: center; gap: 16px; color: #89662f; font-size: 10px; font-weight: 700; letter-spacing: 2.7px; line-height: 1.7; margin-bottom: 24px; }
+.db-services-label::before { content: ""; width: 36px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.db-services-preview h2, .db-services-page h2 { font: 400 clamp(38px, 4.3vw, 62px)/1.08 "Cormorant Garamond", serif; letter-spacing: -1px; }
+.db-services-preview em, .db-services-page em { font-weight: 400; color: #89662f; }
+.db-services-copy { font-size: 13px; line-height: 1.95; color: #6d5e51; }
+.db-services-intro { text-align: center; margin-bottom: 24px; }
+.db-services-intro .db-services-label { justify-content: center; gap: 10px; margin-bottom: 8px; }
+.db-services-intro .db-services-label::before { content: none; }
+.db-services-intro .db-services-label::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.db-services-intro h2 { font-weight: 600; }
+.db-services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.db-services-photo { position: relative; overflow: hidden; height: 310px; border-radius: 22px 22px 0 0; background: var(--beige); }
+.db-services-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
+.db-services-photo::after { content: ""; position: absolute; inset: 0; background: #160e0a; opacity: .08; transition: opacity 450ms cubic-bezier(.22, 1, .36, 1); }
+.db-services-item-meta { display: flex; align-items: center; gap: 18px; margin-top: 20px; color: #89662f; font-size: 12px; letter-spacing: 2px; }
+.db-services-rule { height: 1px; width: 42px; background: var(--gold); transition: width 450ms cubic-bezier(.22, 1, .36, 1); }
+.db-services-arrow { margin-left: auto; margin-top: auto; padding-top: 6px; line-height: 1; color: #89662f; font-size: 23px; transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
+.db-services-preview h3 { font: 500 clamp(26px, 2.6vw, 35px)/1.1 "Cormorant Garamond", serif; margin: 10px 0; min-height: 2.2em; }
+.db-services-preview-link { display: flex; flex-direction: column; height: 100%; }
+.db-services-preview-link > .db-services-copy { font-size: 12px; line-height: 1.7; min-height: 5.1em; }
+.db-services-preview-bottom { text-align: center; margin-top: 40px; }
+.db-services-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 60px; padding: 10px 12px 10px 26px; border: 1px solid var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; transition: background 500ms ease; }
+.db-services-button > span { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: var(--espresso); color: var(--cream); font-size: 21px; letter-spacing: 0; transition: transform 500ms ease, background 500ms ease; }
+.db-services-button:hover { background: #c49a5214; }
+.db-services-button:hover > span { background: #89662f; transform: translateX(4px); }
+.db-services-preview a:focus-visible, .db-services-page a:focus-visible { outline: 2px solid #89662f; outline-offset: 6px; }
+.db-services-preview-link:focus-visible .db-services-rule { width: 80px; }
+@media (hover: hover) {
+  .db-services-preview-link:hover .db-services-photo img { transform: scale(1.025); }
+  .db-services-preview-link:hover .db-services-photo::after { opacity: .19; }
+  .db-services-preview-link:hover .db-services-rule { width: 80px; }
+  .db-services-preview-link:hover .db-services-arrow { transform: translateX(5px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .db-services-animate .db-services-preview-item { opacity: 0; transform: translateY(35px); transition: opacity 700ms cubic-bezier(.22, 1, .36, 1) var(--service-delay), transform 700ms cubic-bezier(.22, 1, .36, 1) var(--service-delay); }
+  .db-services-animate.db-services-visible .db-services-preview-item, .db-services-animate .db-services-preview-item:focus-within { opacity: 1; transform: none; }
+}
+.db-services-page-header { padding: 184px 0 70px; background: #160e0a; color: var(--cream); border-bottom: 1px solid var(--gold); }
+.db-services-page-header .db-services-label, .db-services-capacity .db-services-label { color: #d2a65a; }
+.db-services-page-header h1 { font: 400 clamp(56px, 7.5vw, 104px)/.98 "Cormorant Garamond", serif; letter-spacing: -1.5px; }
+.db-services-page-header h1 em { color: #d2a65a; }
+.db-services-page-header .db-services-copy { color: #d8caba; max-width: 435px; margin-top: 30px; }
+.db-services-header-note { display: block; margin-top: 54px; padding-top: 22px; border-top: 1px solid #c49a524d; font-size: 9px; letter-spacing: 2px; line-height: 1.9; color: #d8caba; }
+.db-services-header-note span { padding-inline: 14px; color: var(--gold); }
+.db-services-editorial { padding-block: 40px 70px; }
+.db-services-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(36px, 7vw, 100px); align-items: center; padding-block: 60px; border-bottom: 1px solid #c49a524d; scroll-margin-top: 28px; }
+.db-services-row:nth-child(even) { grid-template-columns: 1fr 1.15fr; }
+.db-services-row:nth-child(even) .db-services-row-photo { order: 2; }
+.db-services-row-photo { aspect-ratio: 4 / 3; background: var(--beige); }
+.db-services-row-photo img { width: 100%; height: 100%; object-fit: cover; }
+.db-services-row-content { padding-block: 12px; }
+.db-services-row-content .db-services-label span { font: 400 35px/1 "Cormorant Garamond", serif; letter-spacing: 0; }
+.db-services-row-content .db-services-copy { margin-top: 24px; max-width: 390px; }
+.db-services-text-link { display: inline-flex; gap: 28px; align-items: center; margin-top: 30px; padding-block: 12px; border-bottom: 1px solid var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; }
+.db-services-text-link span { font-size: 20px; transition: transform 500ms ease; }
+.db-services-text-link:hover span { transform: translateX(4px); }
+.db-services-capacity { text-align: center; background: #160e0a; color: var(--cream); padding: 88px 0; }
+.db-services-capacity .db-services-label { justify-content: center; }
+.db-services-capacity h2 > span { display: block; font-size: clamp(48px, 10vw, 140px); font-weight: 400; letter-spacing: -2px; color: #d2a65a; white-space: nowrap; }
+.db-services-capacity h2 small { display: block; font: 500 11px/1.5 "Manrope", sans-serif; letter-spacing: 8px; margin-top: 18px; }
+.db-services-capacity .db-services-copy { color: #d8caba; max-width: 505px; margin: 30px auto 0; }
+.db-services-commitments { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding-block: 100px; }
+.db-services-commitments dl > div { padding: 22px 0; border-top: 1px solid #c49a524d; }
+.db-services-commitments dt { font: 500 26px/1.2 "Cormorant Garamond", serif; margin-bottom: 8px; }
+.db-services-commitments dd { font-size: 13px; line-height: 1.9; color: #6d5e51; }
+.db-services-enquiry { background: #eadcc866; border-top: 1px solid #c49a524d; text-align: center; padding: 80px 24px 90px; }
+.db-services-enquiry .db-services-label { justify-content: center; }
+.db-services-enquiry .db-services-copy { margin: 24px auto 32px; max-width: 480px; }
+.db-services-enquiry-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+@media (max-width: 960px) {
+  .db-services-container { width: calc(100% - 64px); }
+  .db-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+  .db-services-preview-item:last-child { grid-column: 1 / -1; width: calc(50% - 15px); justify-self: center; }
+  .db-services-row { gap: 32px; }
+  .db-services-commitments { gap: 40px; }
+}
+@media (max-width: 640px) {
+  .db-services-container { width: calc(100% - 48px); }
+  .db-services-preview { padding: 12px 20px 45px; }
+  .db-services-preview > .db-services-container { width: 100%; }
+  .db-services-intro, .db-services-grid, .db-services-row, .db-services-row:nth-child(even), .db-services-commitments { grid-template-columns: minmax(0, 1fr); }
+  .db-services-intro { margin-bottom: 22px; }
+  .db-services-preview-item:last-child { grid-column: auto; width: 100%; }
+  .db-services-photo { height: 230px; }
+  .db-services-preview h3, .db-services-preview-link > .db-services-copy { min-height: 0; }
+  .db-services-preview-bottom { margin-top: 38px; }
+  .db-services-page-header { padding-top: 142px; padding-bottom: 48px; }
+  .db-services-header-note { letter-spacing: 1px; }
+  .db-services-row { padding-block: 36px; gap: 24px; }
+  .db-services-row:nth-child(even) .db-services-row-photo { order: 0; }
+  .db-services-editorial { padding-block: 16px 48px; }
+  .db-services-capacity { padding-block: 64px; }
+  .db-services-capacity h2 > span { font-size: clamp(40px, 10.5vw, 67px); letter-spacing: -1px; }
+  .db-services-commitments { padding-block: 64px; gap: 32px; }
+  .db-services-enquiry { padding-block: 60px; }
+  .db-services-enquiry-actions { flex-direction: column; max-width: 310px; margin-inline: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-services-preview *, .db-services-page * { transition: none !important; }
+}
+
+.db-services-commitment-number { display: inline-block; margin-right: 14px; color: #89662f; font: 500 12px/1.5 'Manrope', sans-serif; vertical-align: middle; }
+.db-services-preview .db-services-button { transition: background 450ms cubic-bezier(.22, 1, .36, 1), border-color 450ms cubic-bezier(.22, 1, .36, 1); }
+.db-services-preview .db-services-button:hover { border-color: #89662f; }
+
+/* Catering page service listing */
+.catering-listing { padding: clamp(64px, 7vw, 96px) 0 82px; background: #fffdf9; color: #160e0a; }
+.catering-listing-header { width: min(1380px, calc(100% - 10vw)); margin: 0 auto 58px; text-align: center; }
+.catering-listing-eyebrow { margin: 0 0 16px; color: #8e652d; font: 600 10px/1.6 "Manrope", sans-serif; letter-spacing: 4px; text-transform: uppercase; }
+.catering-listing-header h2 { color: #160e0a; font: 500 clamp(52px, 5.2vw, 68px)/.98 "Cormorant Garamond", serif; letter-spacing: -.025em; }
+.catering-listing-header h2 em { color: #d2a65a; font-style: italic; }
+.catering-listing-header > p:last-child { max-width: 570px; margin: 20px auto 0; color: #6d5e51; font: 400 13px/1.8 "Manrope", sans-serif; }
+.catering-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 30px; width: min(1380px, calc(100% - 10vw)); margin: 0 auto; }
+.catering-card { min-width: 0; background: #f8f2e8; }
+.catering-card-image { position: relative; height: 300px; overflow: hidden; border-radius: 24px 24px 4px 4px; background: #eadcc8; }
+.catering-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 700ms cubic-bezier(.22, 1, .36, 1); }
+.catering-card-image::after { content: ""; position: absolute; inset: 0; background: rgba(22, 14, 10, 0); transition: background 700ms ease; pointer-events: none; }
+.catering-card-goldline { display: block; width: 35%; height: 1px; background: #d2a65a; transition: width 600ms cubic-bezier(.22, 1, .36, 1); }
+.catering-card-content { display: flex; min-height: 252px; flex-direction: column; align-items: flex-start; padding: 23px 30px 28px; }
+.catering-card-number { color: #d2a65a; font: 600 10px/1.5 "Manrope", sans-serif; letter-spacing: 2px; }
+.catering-card-content h3 { margin: 12px 0 9px; color: #160e0a; font: 500 clamp(28px, 2.4vw, 34px)/1.08 "Cormorant Garamond", serif; }
+.catering-card-content p { margin: 0; color: #6d5e51; font: 400 12px/1.8 "Manrope", sans-serif; }
+.catering-card-content a { display: inline-flex; align-items: center; gap: 13px; margin-top: auto; padding-top: 22px; color: #160e0a; font: 600 10px/1.5 "Manrope", sans-serif; letter-spacing: 2px; }
+.catering-card-content a span { color: #8e652d; font-size: 17px; transition: transform 350ms ease; }
+.catering-card-content a:hover span { transform: translateX(5px); }
+@media (hover: hover) and (pointer: fine) {
+  .catering-card:hover .catering-card-image img { transform: scale(1.055); }
+  .catering-card:hover .catering-card-image::after { background: rgba(22, 14, 10, .12); }
+  .catering-card:hover .catering-card-goldline { width: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .catering-card-grid .catering-card { opacity: 0; transform: translateY(45px); transition: opacity 800ms cubic-bezier(.22, 1, .36, 1) var(--card-delay), transform 800ms cubic-bezier(.22, 1, .36, 1) var(--card-delay); }
+  .catering-card-grid.is-visible .catering-card { opacity: 1; transform: translateY(0); }
+}
+.catering-capacity { padding: 78px 24px 82px; text-align: center; color: #fffdf9; background: #160e0a; }
+.catering-capacity .catering-listing-eyebrow { color: #d2a65a; }
+.catering-capacity h2 { color: #d2a65a; font: 500 clamp(58px, 10vw, 132px)/.95 "Cormorant Garamond", serif; letter-spacing: -.035em; }
+.catering-capacity > span { display: block; margin-top: 15px; font: 600 10px/1.5 "Manrope", sans-serif; letter-spacing: 7px; }
+.catering-capacity > p:last-child { margin: 24px 0 0; color: rgba(255,253,249,.72); font: 400 13px/1.8 "Manrope", sans-serif; }
+.catering-cta { padding: 68px 24px 76px; text-align: center; background: #f8f2e8; }
+.catering-cta .catering-listing-eyebrow { margin-bottom: 12px; }
+.catering-cta h2 { max-width: 700px; margin: 0 auto; color: #160e0a; font: 500 clamp(34px, 4vw, 48px)/1.05 "Cormorant Garamond", serif; }
+.catering-cta > div { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 26px; }
+.catering-cta .db-services-button { min-width: 220px; text-align: left; }
+@media (max-width: 960px) {
+  .catering-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 34px; }
+  .catering-card-content { min-height: 240px; }
+}
+@media (max-width: 640px) {
+  .catering-listing { padding: 58px 0 64px; }
+  .catering-listing-header, .catering-card-grid { width: calc(100% - 48px); }
+  .catering-listing-header { margin-bottom: 34px; }
+  .catering-listing-header h2 { font-size: clamp(46px, 12vw, 58px); }
+  .catering-listing-header > p:last-child { font-size: 12px; }
+  .catering-card-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .catering-card-image { height: 255px; }
+  .catering-card-content { min-height: 0; padding: 22px 24px 24px; }
+  .catering-card-content h3 { font-size: 32px; }
+  .catering-card-content a { margin-top: 4px; padding-top: 18px; }
+  .catering-capacity { padding-block: 62px; }
+  .catering-capacity h2 { font-size: clamp(48px, 12vw, 72px); white-space: nowrap; }
+  .catering-capacity > span { letter-spacing: 5px; }
+  .catering-cta { padding-block: 56px 62px; }
+  .catering-cta > div { flex-direction: column; max-width: 310px; margin-inline: auto; margin-top: 24px; }
+}
+@media (max-width: 360px) {
+  .catering-listing-header, .catering-card-grid { width: calc(100% - 36px); }
+  .catering-capacity h2 { font-size: 44px; }
+}

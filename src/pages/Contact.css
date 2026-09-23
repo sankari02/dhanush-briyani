@@ -1,0 +1,10 @@
+﻿.contact-page { padding-top: 104px; background: #160e0a; }
+.contact-page-content { overflow: clip; }
+@media (max-width: 900px) { .contact-page { padding-top: 78px; } }
+@media (max-width: 767px) { .contact-page .about-page-banner { height: 300px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .contact-reveal .quotation-left, .contact-reveal .quotation-right { opacity: 0; transition: opacity 800ms ease, transform 800ms cubic-bezier(.22,1,.36,1); }
+  .contact-reveal .quotation-left { transform: translateX(-35px); }
+  .contact-reveal .quotation-right { transform: translateX(35px); }
+  .contact-reveal .contact-panel-visible, .contact-reveal:focus-within .quotation-left, .contact-reveal:focus-within .quotation-right { opacity: 1; transform: none; }
+}
