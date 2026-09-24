@@ -1,4 +1,4 @@
-.db-footer { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: 80px 7% 30px; background: #351419; color: #fffdf9; }
+.db-footer { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: 80px 7% 30px; background: #000; color: #fffdf9; }
 .db-footer-inner { position: relative; z-index: 1; max-width: 1440px; margin-inline: auto; }
 .db-footer-grid { display: grid; grid-template-columns: 1.35fr .75fr 1fr 1fr; gap: clamp(24px, 3.5vw, 58px); }
 .db-footer-column { min-width: 0; }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/images/db log.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="nav-logo" onClick={closeMenu}>
-        <div className="logo-mark">DB</div>
+        <img className="logo-mark" src={logo} alt="" />
 
         <div>
           <h2>Dhanush Briyani</h2>

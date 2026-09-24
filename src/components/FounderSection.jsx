@@ -44,7 +44,7 @@ function FounderSection() {
           <div className="founder-copy">
             <h2 id="founder-heading">Meet the<br /><em>Founder.</em></h2>
             <div className="founder-identity">
-              <h3>Dhanush</h3>
+              <h3>Mr.Dhanush</h3>
               <p className="founder-role">FOUNDER — DHANUSH BRIYANI</p>
               <p className="founder-qualification">B.Sc. Computer Science</p>
             </div>

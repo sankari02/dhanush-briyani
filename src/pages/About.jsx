@@ -6,6 +6,7 @@ import EventMarquee from "../components/EventMarquee";
 import bannerImage from "../assets/images/about-banner-briyani.png";
 import briyaniImage from "../assets/about-briyani.png";
 import firewoodImage from "../assets/about-firewood.png";
+import logo from "../assets/images/db log.png";
 import FounderSection from "../components/FounderSection";
 import "./About.css";
 
@@ -21,7 +22,7 @@ function About() {
           <div className="about-page-photos">
             <img className="about-page-photo-first" src={briyaniImage} alt="Briyani prepared with aromatic rice and spices" loading="lazy" />
             <img className="about-page-photo-second" src={firewoodImage} alt="Traditional briyani preparation over a firewood flame" loading="lazy" />
-            <div className="about-page-since" aria-label="Since 2024"><span>SINCE</span><strong>2024</strong><i aria-hidden="true" /></div>
+            <div className="about-page-since" aria-label="Dhanush Briyani logo"><img src={logo} alt="Dhanush Briyani" /></div>
           </div>
           <div>
             <p className="about-page-label">ABOUT US</p>

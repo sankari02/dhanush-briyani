@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import briyaniImage from "../assets/about-briyani.png";
 import firewoodImage from "../assets/about-firewood.png";
+import logo from "../assets/images/db log.png";
 
 const highlights = [
   { title: "2 Years", caption: "Serving with Passion", icon: "flame" },
@@ -67,9 +68,7 @@ function AboutIntro() {
             <svg className="about-intro-badge-ring" viewBox="0 0 120 120" aria-hidden="true">
               <circle cx="60" cy="60" r="59.5" pathLength="100" />
             </svg>
-            <span>SINCE</span>
-            <strong>2024</strong>
-            <i aria-hidden="true" />
+            <img src={logo} alt="Dhanush Briyani" />
           </div>
         </div>
 

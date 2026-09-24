@@ -11,7 +11,7 @@
 .db-reviews-label::before, .db-reviews-label::after { content: ""; width: 32px; height: 1px; background: #d2a65a; opacity: .65; }
 #root .db-reviews-header h2 { font: 500 clamp(44px, 4.4vw, 64px)/1.02 "Cormorant Garamond", serif; letter-spacing: -.02em; }
 #root .db-reviews-header h2 em { color: #d2a65a; font-style: italic; }
-#root .db-reviews-subtitle { margin: 18px auto 0; font: 400 13px/1.7 "Manrope", sans-serif; color: rgba(255,253,249,.65); }
+#root .db-reviews-subtitle { margin: 18px auto 0; font: 400 16px/1.7 "Cormorant Garamond", serif; color: rgba(255,253,249,.72); }
 .db-reviews-window {
   margin-top: 32px;
   padding: 8px 0 16px;
@@ -59,7 +59,7 @@
 @media (max-width: 600px) {
   .db-reviews { --review-width: 86vw; --review-gap: 18px; padding: 52px 0 30px; }
   #root .db-reviews-header h2 { font-size: 44px; }
-  #root .db-reviews-subtitle { max-width: 300px; font-size: 12px; }
+  #root .db-reviews-subtitle { max-width: 300px; font-size: 15px; }
   .db-reviews-window { margin-top: 26px; mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent); }
   .db-reviews-card { padding: 30px 26px; min-height: 330px; }
   .db-reviews-card::before { left: 26px; }
