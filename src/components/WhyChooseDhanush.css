@@ -17,7 +17,7 @@
 .db-why-promise:nth-child(even)::before { right: auto; left: 50%; }
 .db-why-content { position: relative; grid-column: 1; padding-right: 32px; text-align: right; }
 .db-why-promise:nth-child(even) .db-why-content { grid-column: 2; padding: 0 0 0 32px; text-align: left; }
-.db-why-photo { grid-column: 1; grid-row: 2; justify-self: end; }
+.db-why-photo { grid-column: 1; grid-row: 2; justify-self: start; }
 .db-why-promise:nth-child(even) .db-why-photo { grid-column: 2; justify-self: start; }
 .db-why-number { position: absolute; top: -12px; right: 62px; font: 400 84px/1 "Cormorant Garamond", serif; color: rgba(210,166,90,.18); transition: color 300ms ease; }
 .db-why-promise:nth-child(even) .db-why-number { right: auto; left: 62px; }
