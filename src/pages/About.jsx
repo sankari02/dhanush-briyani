@@ -3,14 +3,32 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import EventMarquee from "../components/EventMarquee";
-import bannerImage from "../assets/images/about-banner-briyani.png";
-import briyaniImage from "../assets/about-briyani.png";
-import firewoodImage from "../assets/about-firewood.png";
-import logo from "../assets/images/db log.png";
+import bannerImage from "../assets/images/why-firewood.png";
+import shopImage from "../assets/images/Dhanush Briyani shop.png";
 import FounderSection from "../components/FounderSection";
+import { useEffect, useRef } from "react";
 import "./About.css";
 
 function About() {
+  const shopStoryRef = useRef(null);
+
+  useEffect(() => {
+    const section = shopStoryRef.current;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!section || reduceMotion.matches || !("IntersectionObserver" in window)) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        section.classList.add("is-visible");
+        observer.disconnect();
+      }
+    }, { threshold: 0.2 });
+
+    section.classList.add("about-shop-reveal");
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -18,16 +36,15 @@ function About() {
         <div className="about-page-reveal">
         <InnerPageHero title="About Us" />
 
-        <section className="about-page-intro about-page-container about-page-section" aria-labelledby="about-introduction-heading">
-          <div className="about-page-photos">
-            <img className="about-page-photo-first" src={briyaniImage} alt="Briyani prepared with aromatic rice and spices" loading="lazy" />
-            <img className="about-page-photo-second" src={firewoodImage} alt="Traditional briyani preparation over a firewood flame" loading="lazy" />
-            <div className="about-page-since" aria-label="Dhanush Briyani logo"><img src={logo} alt="Dhanush Briyani" /></div>
-          </div>
-          <div>
-            <p className="about-page-label">ABOUT US</p>
-            <h2 id="about-introduction-heading">Tradition, Firewood &amp;<br />Flavour in Every<br /><em>Celebration.</em></h2>
-            <p className="about-page-copy">Dhanush Briyani began two years ago with a simple passion — serving authentic firewood-cooked briyani with rich flavour and care. From small gatherings to memorable celebrations, we focus on traditional preparation, quality ingredients, and food that brings people together.</p>
+        <section ref={shopStoryRef} className="about-page-intro about-page-container about-page-section" aria-labelledby="about-introduction-heading">
+          <figure className="about-shop-photo">
+            <img src={shopImage} alt="The Dhanush Briyani shop in the evening, with its signboard and customers" loading="lazy" />
+          </figure>
+          <div className="about-shop-copy">
+            <p className="about-page-label">OUR SHOP</p>
+            <h2 id="about-introduction-heading">Where the Night Meets<br /><em>Dhanush Briyani.</em></h2>
+            <p className="about-page-copy">Dhanush Briyani comes alive in the evening, serving freshly prepared briyani through the night until midnight. What started with a passion for authentic firewood cooking has grown into a place where people gather for hot, flavourful briyani after the sun goes down.</p>
+            <p className="about-shop-highlights">EVENING TO MIDNIGHT <span aria-hidden="true">�</span> FRESHLY PREPARED <span aria-hidden="true">�</span> FIREWOOD COOKED</p>
           </div>
         </section>
 

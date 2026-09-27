@@ -14,6 +14,8 @@ const promisePhotos = [
   { src: naturalCookingPhoto, alt: "Traditional cooking with fresh, natural ingredients" },
 ];
 
+const promisePhotoPositions = ["center 54%", "center", "center 56%", "center", "center"];
+
 const reasons = [
   { title: "Cooked with Casuarina Wood", text: "Our briyani is traditionally cooked using only Casuarina wood for an authentic firewood cooking experience.", icon: "wood" },
   { title: "On-Time Catering", text: "We focus on timely preparation and catering service for every celebration.", icon: "clock" },
@@ -123,7 +125,7 @@ export default function WhyChooseDhanush() {
                   </div>
                   <figure className="db-why-photo">
                     <div className="db-why-photo-zoom">
-                      <img src={promisePhotos[index].src} alt={promisePhotos[index].alt} loading="lazy" decoding="async" />
+                      <img src={promisePhotos[index].src} alt={promisePhotos[index].alt} loading="lazy" decoding="async" style={{ objectPosition: promisePhotoPositions[index] }} />
                     </div>
                   </figure>
                 </article>

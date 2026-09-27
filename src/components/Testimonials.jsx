@@ -7,7 +7,6 @@ const demoReviews = [
   { event: "Corporate Catering", text: "A warm and flavourful catering experience that our guests truly enjoyed." },
   { event: "Special Celebration", text: "The aroma, presentation and traditional preparation made the meal feel special." },
 ];
-
 export default function Testimonials() {
   return (
     <section className="db-reviews" id="testimonials" aria-labelledby="db-reviews-heading">
@@ -42,3 +41,5 @@ export default function Testimonials() {
     </section>
   );
 }
+
+
