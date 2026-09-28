@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import briyaniImage from "../assets/about-briyani.png";
-import firewoodImage from "../assets/about-firewood.png";
-import logo from "../assets/images/db log.png";
+import plateImage from "../assets/about-animation/briyani-plate.png";
+import onionImage from "../assets/about-animation/onion.png";
+import chilliImage from "../assets/about-animation/chilli.png";
+import leavesImage from "../assets/about-animation/leaves.png";
+import topPaperImage from "../assets/about-animation/top-red-paper.png";
+import bottomPaperImage from "../assets/about-animation/bottom-red-paper.png";
 
 const highlights = [
   { title: "2 Years", caption: "Serving with Passion", icon: "flame" },
@@ -26,6 +29,7 @@ function AboutIcon({ type }) {
 
 function AboutIntro() {
   const sectionRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -54,6 +58,68 @@ function AboutIntro() {
     };
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    const composition = animationRef.current;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+
+    const updateProgress = () => {
+      frame = 0;
+      if (!section || !composition) return;
+      if (reduceMotion.matches) {
+        composition.style.setProperty("--top-paper-y", "0px");
+        composition.style.setProperty("--bottom-paper-y", "0px");
+        composition.style.setProperty("--plate-angle", "0deg");
+        composition.style.setProperty("--plate-scale", "1");
+        composition.style.setProperty("--plate-y", "0px");
+        composition.style.setProperty("--plate-opacity", "1");
+        composition.style.setProperty("--onion-parallax", "0px");
+        composition.style.setProperty("--chilli-parallax", "0px");
+        composition.style.setProperty("--leaves-parallax", "0px");
+        return;
+      }
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const sectionProgress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / Math.max(1, rect.height)));
+      const revealProgress = Math.min(1, sectionProgress / 0.65);
+      const opacity = Math.min(1, 0.7 + revealProgress * 0.44);
+      const plateScale = sectionProgress <= 0.5
+        ? 0.68 + sectionProgress * 0.4
+        : 0.88 + (sectionProgress - 0.5) * 0.4;
+      const plateY = sectionProgress <= 0.5
+        ? 25 - sectionProgress * 34
+        : 8 - (sectionProgress - 0.5) * 16;
+
+      composition.style.setProperty("--reveal-progress", revealProgress.toFixed(4));
+      composition.style.setProperty("--section-progress", sectionProgress.toFixed(4));
+      composition.style.setProperty("--top-paper-y", `${220 * (1 - revealProgress)}px`);
+      composition.style.setProperty("--bottom-paper-y", `${-220 * (1 - revealProgress)}px`);
+      composition.style.setProperty("--plate-angle", `${50 * sectionProgress}deg`);
+      composition.style.setProperty("--plate-scale", `${plateScale}`);
+      composition.style.setProperty("--plate-y", `${plateY}px`);
+      composition.style.setProperty("--plate-opacity", `${opacity}`);
+      composition.style.setProperty("--onion-parallax", `${10 * (1 - sectionProgress)}px`);
+      composition.style.setProperty("--chilli-parallax", `${12 * (1 - sectionProgress)}px`);
+      composition.style.setProperty("--leaves-parallax", `${-8 * (1 - sectionProgress)}px`);
+    };
+
+    const requestProgress = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateProgress);
+    };
+
+    requestProgress();
+    window.addEventListener("scroll", requestProgress, { passive: true });
+    window.addEventListener("resize", requestProgress);
+    reduceMotion.addEventListener("change", requestProgress);
+    return () => {
+      window.removeEventListener("scroll", requestProgress);
+      window.removeEventListener("resize", requestProgress);
+      reduceMotion.removeEventListener("change", requestProgress);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <section ref={sectionRef} className="about-intro" id="about" aria-labelledby="about-intro-heading">
       <svg className="about-intro-botanical" viewBox="0 0 200 300" fill="none" stroke="currentColor" aria-hidden="true">
@@ -61,14 +127,15 @@ function AboutIntro() {
       </svg>
       <div className="about-intro-inner">
         <div className="about-intro-images">
-          <img className="about-intro-image about-intro-image-first" src={briyaniImage} alt="Briyani prepared with aromatic rice and spices" loading="lazy" />
-          <img className="about-intro-image about-intro-image-second" src={firewoodImage} alt="Traditional briyani preparation over a firewood flame" loading="lazy" />
-          <span className="about-intro-assembly-spark" aria-hidden="true" />
-          <div className="about-intro-badge" aria-label="Since 2024">
-            <svg className="about-intro-badge-ring" viewBox="0 0 120 120" aria-hidden="true">
-              <circle cx="60" cy="60" r="59.5" pathLength="100" />
-            </svg>
-            <img src={logo} alt="Dhanush Briyani" />
+          <div ref={animationRef} className="about-food-composition" aria-hidden="true">
+            <div className="about-food-layer about-food-paper about-food-paper-top"><img src={topPaperImage} alt="" /></div>
+            <div className="about-food-layer about-food-onion"><div className="about-food-float about-food-onion-float"><img src={onionImage} alt="" /></div></div>
+            <div className="about-food-layer about-food-chilli"><div className="about-food-float about-food-chilli-float"><img src={chilliImage} alt="" /></div></div>
+            <div className="about-food-plate-position">
+              <div className="about-food-plate-scroll"><div className="about-food-plate-float"><img src={plateImage} alt="" /></div></div>
+            </div>
+            <div className="about-food-layer about-food-leaves"><div className="about-food-float about-food-leaves-float"><img src={leavesImage} alt="" /></div></div>
+            <div className="about-food-layer about-food-paper about-food-paper-bottom"><img src={bottomPaperImage} alt="" /></div>
           </div>
         </div>
 
