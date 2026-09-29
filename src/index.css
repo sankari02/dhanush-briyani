@@ -3352,6 +3352,35 @@ body {
   transform: translateY(var(--bottom-paper-y));
 }
 .about-food-paper img { object-fit: fill; }
+.about-food-word {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  color: #A81712;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: clamp(0, calc(var(--reveal-progress, 0) * 1.7), 1);
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+  transition-delay: 0ms;
+  will-change: opacity, transform;
+}
+.about-food-word-dhanush {
+  top: 17%;
+  left: 7%;
+  font-size: clamp(28px, 3vw, 48px);
+  letter-spacing: .08em;
+  transform: translateX(calc(-15px * (1 - var(--reveal-progress, 0))));
+}
+.about-food-word-briyani {
+  z-index: 5;
+  left: 50%;
+  bottom: 13%;
+  font-size: clamp(30px, 3.5vw, 50px);
+  letter-spacing: .04em;
+  transform: translateX(calc(-50% + 15px * (1 - var(--reveal-progress, 0))));
+}
 .about-food-plate-position {
   position: absolute;
   inset: 0;

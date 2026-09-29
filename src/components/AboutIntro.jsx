@@ -129,6 +129,8 @@ function AboutIntro() {
         <div className="about-intro-images">
           <div ref={animationRef} className="about-food-composition" aria-hidden="true">
             <div className="about-food-layer about-food-paper about-food-paper-top"><img src={topPaperImage} alt="" /></div>
+            <span className="about-food-word about-food-word-dhanush">DHANUSH</span>
+            <span className="about-food-word about-food-word-briyani">BRIYANI</span>
             <div className="about-food-layer about-food-onion"><div className="about-food-float about-food-onion-float"><img src={onionImage} alt="" /></div></div>
             <div className="about-food-layer about-food-chilli"><div className="about-food-float about-food-chilli-float"><img src={chilliImage} alt="" /></div></div>
             <div className="about-food-plate-position">
