@@ -854,13 +854,19 @@ body {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .navbar {
-    height: 75px;
+    position: relative;
+    height: 68px;
+    padding: 0 18px;
+    color: #160e0a;
+    background: #f7f0e4;
+    border-bottom: 1px solid rgba(183,122,56,.18);
   }
 
   .nav-logo h2 {
     font-size: 20px;
+    color: #160e0a;
   }
 
   .nav-logo span {
@@ -872,27 +878,29 @@ body {
     font-size: 10px;
   }
 
+  .menu-toggle span { background: #160e0a; }
+
   .hero h1 {
-    font-size: clamp(48px, 15vw, 62px);
+    font-size: clamp(46px, 13.5vw, 60px);
     line-height: 0.88;
   }
 
   .hero-description {
-    font-size: 14px;
-    max-width: 94%;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    width: min(100%, 310px);
-  }
-
-  .hero-bottom {
     display: none;
   }
 
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    width: 100%;
+    max-width: 440px;
+    gap: 10px;
+  }
+
   .hero-embers {
+    top: 0;
+    bottom: 0;
     height: 46%;
     opacity: 0.72;
   }
@@ -907,11 +915,27 @@ body {
   }
 
   .hero {
-    align-items: flex-end;
-    min-height: 100svh;
-    padding: 118px 6% 88px;
-    background-position: 64% center;
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - 68px);
+    padding: 72px 24px 100px;
+    overflow: hidden;
+    color: #f5ebdd;
+    background-color: #160e0a;
+    background-image:
+      linear-gradient(90deg, rgba(22, 14, 10, .88) 0%, rgba(22, 14, 10, .72) 42%, rgba(22, 14, 10, .28) 100%),
+      linear-gradient(180deg, rgba(22, 14, 10, .2), transparent 48%, rgba(22, 14, 10, .36)),
+      url("./assets/images/dhanush-hero.png");
+    background-size: cover, cover, cover;
+    background-position: center, center, 68% center;
   }
+
+  .hero::before {
+    inset: 0;
+    background: radial-gradient(circle at 78% 54%, rgba(210,166,90,.06), transparent 35%), linear-gradient(180deg, rgba(22,14,10,.12), transparent 45%, rgba(22,14,10,.3));
+  }
+
+  .hero-overlay { height: auto; }
 
   .hero::after,
   .hero-script-note,
@@ -921,12 +945,80 @@ body {
   }
 
   .hero-content {
+    position: relative;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
   }
 
   .hero-heading {
-    min-height: 1.98em;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    min-height: 1.2em;
+    margin-bottom: 24px;
+    color: #fffdf9;
   }
+
+  .hero-label {
+    position: static;
+    margin-bottom: 20px;
+    color: #f0c873;
+  }
+
+  .hero-heading-mask { padding-bottom: .1em; }
+
+  .hero-heading-phrase {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: .95;
+    color: #fffdf9;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    display: inline-flex;
+    flex: initial;
+    min-width: 0;
+    min-height: 48px;
+    height: 48px;
+    padding: 10px 8px;
+    gap: 4px;
+    font-size: 8px;
+    letter-spacing: .7px;
+    white-space: nowrap;
+  }
+
+  #root .hero .primary-btn,
+  #root .hero .secondary-btn {
+    font-size: 9px;
+    letter-spacing: .7px;
+  }
+
+  .secondary-btn {
+    color: #f5ebdd;
+    border-color: rgba(210,166,90,.76);
+    background: rgba(22,14,10,.22);
+  }
+
+  .hero-bottom {
+    display: flex;
+    left: 6%;
+    right: 6%;
+    bottom: 18px;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 7.5px;
+    line-height: 1.4;
+    letter-spacing: .8px;
+    color: rgba(245,235,221,.88);
+  }
+
+  .hero-feature { gap: 7px; }
+  .hero-feature-icon { width: 13px; height: 13px; flex: 0 0 13px; }
+  .hero-feature-icon::after { inset: 3px; }
+  .hero-feature-divider { height: 25px; }
 
   .hero-label {
     gap: 10px;
@@ -942,6 +1034,99 @@ body {
   .secondary-btn {
     width: 100%;
     min-width: 0;
+  }
+}
+
+/* Keep the mobile hero content over the existing cinematic image. */
+@media (max-width: 600px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 0 0 16px;
+    color: #f5ebdd;
+    background-color: #160e0a;
+    background-image:
+      linear-gradient(180deg, rgba(22, 14, 10, .48) 0%, rgba(22, 14, 10, .28) 50%, rgba(22, 14, 10, .62) 100%),
+      url("./assets/images/dhanush-hero.png");
+    background-size: cover;
+    background-position: 62% center;
+    background-repeat: no-repeat;
+  }
+
+  .hero::before {
+    height: auto;
+    background: linear-gradient(180deg, rgba(22, 14, 10, .16), transparent 45%, rgba(22, 14, 10, .35));
+  }
+
+  .hero-overlay { height: auto; }
+
+  .hero-content {
+    width: 100%;
+    margin-top: 0;
+    padding: 128px 24px 28px;
+    background: transparent;
+  }
+
+  .hero-label {
+    position: static;
+    margin: 0 0 20px;
+    color: #f0c873;
+  }
+
+  .hero-heading {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    margin: 0 0 26px;
+    color: #fffdf9;
+  }
+
+  .hero-heading-phrase {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: .95;
+    color: #fffdf9;
+  }
+
+  .hero-description { display: none; }
+
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    justify-content: center;
+    padding: 10px 8px;
+    gap: 5px;
+    font-size: 8px;
+    letter-spacing: .7px;
+  }
+
+  .secondary-btn {
+    color: #f5ebdd;
+    border-color: rgba(210, 166, 90, .76);
+    background: rgba(22, 14, 10, .32);
+  }
+
+  .hero-bottom {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 12px 18px 0;
+    justify-content: space-between;
+    gap: 6px;
+    color: rgba(245, 235, 221, .92);
   }
 }
 /* HERO ANIMATION */
