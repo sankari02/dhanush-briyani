@@ -3525,6 +3525,7 @@ body {
   z-index: 1;
   width: 130%;
   height: 36%;
+  background: #2a120b;
   transition: none;
 }
 .about-food-paper-top {
@@ -3536,7 +3537,11 @@ body {
   z-index: 1;
   transform: translateY(var(--bottom-paper-y));
 }
-.about-food-paper img { object-fit: fill; }
+.about-food-paper img {
+  object-fit: fill;
+  filter: brightness(.36);
+  mix-blend-mode: color;
+}
 .about-food-word {
   position: absolute;
   z-index: 3;
