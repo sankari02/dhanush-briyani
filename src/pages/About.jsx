@@ -43,8 +43,24 @@ function About() {
           <div className="about-shop-copy">
             <p className="about-page-label">OUR SHOP</p>
             <h2 id="about-introduction-heading">Where the Night Meets<br /><em>Dhanush Briyani.</em></h2>
-            <p className="about-page-copy">Dhanush Briyani comes alive in the evening, serving freshly prepared briyani through the night until midnight. What started with a passion for authentic firewood cooking has grown into a place where people gather for hot, flavourful briyani after the sun goes down.</p>
-            <p className="about-shop-highlights">EVENING TO MIDNIGHT <span aria-hidden="true">�</span> FRESHLY PREPARED <span aria-hidden="true">�</span> FIREWOOD COOKED</p>
+            <p className="about-page-copy">Dhanush Briyani opens daily from 7:00 PM, serving freshly prepared briyani with the authentic flavour of traditional firewood cooking. Visit us at our food truck opposite Providence Mall, Puducherry, or at our second branch in Kathirkamam.</p>
+            <div className="about-shop-highlights" aria-label="Opening time and locations">
+              <div className="about-shop-detail">
+                <span className="about-shop-number">01</span>
+                <span className="about-shop-detail-label">OPEN DAILY</span>
+                <span className="about-shop-detail-value">7:00 PM</span>
+              </div>
+              <div className="about-shop-detail">
+                <span className="about-shop-number">02</span>
+                <span className="about-shop-detail-label">FOOD TRUCK</span>
+                <span className="about-shop-detail-value">Opp. Providence Mall,<br />Puducherry</span>
+              </div>
+              <div className="about-shop-detail">
+                <span className="about-shop-number">03</span>
+                <span className="about-shop-detail-label">SECOND BRANCH</span>
+                <span className="about-shop-detail-value">Kathirkamam,<br />Puducherry</span>
+              </div>
+            </div>
           </div>
         </section>
 

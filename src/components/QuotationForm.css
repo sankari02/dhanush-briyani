@@ -1,8 +1,12 @@
 .quotation-section.combined-planning {
-  --planning-gold: #d2a65a;
+  --planning-roast: #21130f;
+  --planning-terracotta: #7a3024;
+  --planning-gold: #d8aa57;
+  --planning-ivory: #f7efe3;
+  --planning-muted: #725e52;
   position: relative;
   display: block;
-  background: var(--burgundy);
+  background: var(--planning-roast);
   padding: 90px 5%;
 }
 
@@ -22,8 +26,25 @@
 }
 
 .combined-planning .quotation-left {
-  position: static;
+  position: relative;
+  isolation: isolate;
   min-width: 0;
+}
+
+.combined-planning .quotation-left::before {
+  content: "DB";
+  position: absolute;
+  z-index: -1;
+  top: 12%;
+  left: -5%;
+  color: var(--planning-gold);
+  opacity: .04;
+  font-family: Georgia, serif;
+  font-size: clamp(180px, 25vw, 360px);
+  font-weight: 700;
+  line-height: .8;
+  letter-spacing: -.12em;
+  pointer-events: none;
 }
 
 .combined-planning .section-label {
@@ -34,7 +55,7 @@
 }
 
 .combined-planning .quotation-left h2 {
-  color: var(--cream);
+  color: var(--planning-ivory);
   font-size: clamp(60px, 5.5vw, 82px);
   font-weight: 500;
   line-height: .95;
@@ -43,7 +64,7 @@
 }
 
 .combined-planning .quotation-intro {
-  color: #d8caba;
+  color: rgba(247, 239, 227, .78);
   font-size: 14px;
   line-height: 1.85;
 }
@@ -54,7 +75,7 @@
 
 .planning-contact-info > div {
   padding: 13px 0;
-  border-bottom: 1px solid rgba(210, 166, 90, .25);
+  border-bottom: 1px solid rgba(216, 170, 87, .22);
 }
 
 .planning-contact-info span {
@@ -67,7 +88,7 @@
 
 .planning-contact-info a,
 .planning-contact-info p {
-  color: var(--cream);
+  color: var(--planning-ivory);
   font-size: 14px;
   line-height: 1.6;
   overflow-wrap: anywhere;
@@ -80,7 +101,7 @@
   margin-top: 24px;
   padding: 16px 24px;
   border: 1px solid var(--planning-gold);
-  color: var(--cream);
+  color: var(--planning-ivory);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -90,7 +111,7 @@
 
 .planning-whatsapp:hover {
   background: var(--planning-gold);
-  color: #160e0a;
+  color: var(--planning-roast);
 }
 
 .combined-planning .quotation-right,
@@ -102,13 +123,14 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px 24px;
   padding: clamp(24px, 3vw, 42px);
-  background: rgba(255, 255, 255, .035);
-  border: 1px solid rgba(210, 166, 90, .20);
+  background: var(--planning-ivory);
+  border: 1px solid rgba(216, 170, 87, .35);
+  border-radius: 2px;
   box-shadow: none;
 }
 
 .combined-planning .form-group label {
-  color: var(--planning-gold);
+  color: var(--planning-terracotta);
   font-family: "Manrope", sans-serif;
   font-size: 11px;
   letter-spacing: 1.5px;
@@ -117,26 +139,28 @@
 .combined-planning .form-group input,
 .combined-planning .form-group select {
   min-width: 0;
-  color: var(--cream);
-  color-scheme: dark;
+  color: var(--planning-roast);
+  color-scheme: light;
   background: transparent;
-  border-bottom-color: rgba(210, 166, 90, .35);
+  border-bottom-color: rgba(122, 48, 36, .28);
   border-radius: 0;
+  transition: border-color .22s ease;
 }
 
 .combined-planning .form-group input::placeholder,
 .combined-planning .form-group select:invalid {
-  color: rgba(255, 255, 255, .5);
+  color: rgba(33, 19, 15, .5);
 }
 
 .combined-planning .form-group option {
-  background: var(--burgundy);
-  color: var(--cream);
+  background: var(--planning-ivory);
+  color: var(--planning-roast);
 }
 
 .combined-planning .form-group input:focus,
 .combined-planning .form-group select:focus {
   border-color: var(--planning-gold);
+  transition-duration: .22s;
 }
 
 .combined-planning :is(input, select, button, a):focus-visible {
@@ -145,13 +169,39 @@
 }
 
 .combined-planning .quotation-submit {
-  background: var(--planning-gold);
-  color: #160e0a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--planning-terracotta);
+  border: 1px solid var(--planning-gold);
+  color: var(--planning-ivory);
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+}
+
+.combined-planning .quotation-submit::after {
+  content: "\2192";
+  font-size: 17px;
+  line-height: 1;
+  transition: transform .25s ease;
 }
 
 .combined-planning .quotation-submit:hover {
-  background: #e1b975;
-  color: #160e0a;
+  background: var(--planning-roast);
+  border-color: var(--planning-gold);
+  color: var(--planning-ivory);
+}
+
+.combined-planning .quotation-submit:hover::after {
+  transform: translateX(4px);
+}
+
+.combined-planning .form-validation-message {
+  grid-column: 1 / -1;
+  margin: -12px 0 0;
+  color: var(--planning-terracotta);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .combined-planning .pdf-button {
@@ -198,18 +248,22 @@
     font-size: 50px;
   }
 
+  .combined-planning .quotation-left::before {
+    top: 2%;
+    left: -3%;
+    font-size: clamp(170px, 55vw, 260px);
+  }
+
   .combined-planning .quotation-form {
     grid-template-columns: minmax(0, 1fr);
     padding: 28px 20px;
     gap: 24px;
+    margin-inline: 18px;
   }
 
   .combined-planning .form-group.full-width,
+  .combined-planning .form-validation-message,
   .combined-planning .quotation-submit {
     grid-column: 1;
-  }
-
-  .combined-planning .quotation-actions {
-    grid-template-columns: minmax(0, 1fr);
   }
 }

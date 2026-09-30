@@ -4,7 +4,7 @@ function Contact() {
       <div className="planning-contact-info">
         <div>
           <span>PHONE / WHATSAPP</span>
-          <a href="tel:+919344496756">+91 93444 96756</a>
+          <a href="tel:+918098878889">+91 80988 78889</a>
         </div>
 
         <div>
@@ -24,7 +24,7 @@ function Contact() {
           <p>Authentic Firewood Briyani & Catering</p>
         </div>
       </div>
-      <a href="https://wa.me/919344496756" target="_blank" rel="noreferrer" className="planning-whatsapp">
+      <a href="https://wa.me/918098878889" target="_blank" rel="noreferrer" className="planning-whatsapp">
         WhatsApp Us <span aria-hidden="true">&rarr;</span>
       </a>
     </>

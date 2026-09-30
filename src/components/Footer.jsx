@@ -79,7 +79,7 @@ export default function Footer() {
           </nav>
           <div className="db-footer-column db-footer-contact">
             <h3>CONTACT</h3>
-            <div className="db-footer-contact-item"><FooterIcon type="phone" /><div><span>PHONE / WHATSAPP</span><a href="tel:+919344496756">+91 93444 96756</a></div></div>
+            <div className="db-footer-contact-item"><FooterIcon type="phone" /><div><span>PHONE / WHATSAPP</span><a href="tel:+918098878889">+91 80988 78889</a></div></div>
             <div className="db-footer-contact-item"><FooterIcon type="instagram" /><div><span>INSTAGRAM</span><a href={instagram} target="_blank" rel="noreferrer">@dhanush_.briyani</a></div></div>
             <div className="db-footer-contact-item"><FooterIcon type="fire" /><div><span>SPECIALITY</span><p>Authentic Firewood Briyani<br />&amp; Catering</p></div></div>
           </div>
