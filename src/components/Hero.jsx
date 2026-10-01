@@ -19,8 +19,8 @@ const showcaseImages = [...foods.map(({ image }) => image), onion, leaves];
 const heroPhrases = [
   ["Memorable", "Feasts."],
   ["Firewood", "Flavour."],
-  ["Crafted for", "Celebrations."],
-  ["Authentic", "Briyani."],
+  ["DHANUSH BRIYANI."],
+  ["Briyani is emotion!"],
 ];
 
 const preloadImage = (src) => new Promise((resolve) => {
