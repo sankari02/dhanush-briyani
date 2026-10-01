@@ -37,11 +37,11 @@ function AboutIntro() {
     if (motion.matches || !("IntersectionObserver" in window)) return;
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
         section.classList.add("is-visible");
         observer.disconnect();
       }
-    }, { threshold: 0.25 });
+    }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
     section.classList.add("about-intro-animate");
     observer.observe(section);
     const reveal = () => {

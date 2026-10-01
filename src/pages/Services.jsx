@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import EventMarquee from "../components/EventMarquee";
 import weddingImage from "../assets/images/wedding-catering.png";
-import engagementImage from "../assets/images/about-banner-briyani.png";
+import engagementImage from "../assets/images/Engagement & Reception.jpg";
 import birthdayImage from "../assets/images/birthday-catering.png";
 import familyImage from "../assets/images/why-catering.png";
 import corporateImage from "../assets/images/corporate-catering.png";

@@ -12,9 +12,12 @@
   padding: 132px clamp(36px, 7vw, 110px) 48px;
   overflow: visible;
   overflow-x: clip;
-  color: var(--home-ink);
-  background-color: var(--home-ivory);
-  background-image: radial-gradient(circle at 18% 10%, rgba(210, 166, 90, .08) 0%, transparent 35%);
+  color: var(--home-ivory);
+  background-color: #160e0a;
+  background-image: url("../assets/images/hero-dark-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   isolation: isolate;
 }
 
@@ -22,35 +25,18 @@
   content: "";
   position: absolute;
   z-index: 0;
-  top: 104px;
-  left: -60%;
-  right: auto;
-  bottom: -10%;
-  width: 114%;
-  border-radius: 50%;
-  border: 1px solid rgba(183, 122, 56, .3);
+  inset: 0;
+  border: 0;
   pointer-events: none;
-  background-color: #2a120b;
-  background-image:
-    radial-gradient(ellipse at 92% 52%, rgba(183, 122, 56, .18) 0%, rgba(69, 29, 16, .12) 22%, transparent 44%),
-    radial-gradient(ellipse at 77% 70%, rgba(69, 29, 16, .72) 0%, transparent 61%),
-    linear-gradient(145deg, #2a120b 0%, #35170e 58%, #451d10 100%);
-  box-shadow:
-    0 0 0 7px rgba(210, 166, 90, .07),
-    0 0 0 8px rgba(183, 122, 56, .22);
+  background: linear-gradient(90deg, rgba(14, 9, 7, .42), rgba(14, 9, 7, .08) 72%);
 }
 
 .hero.home-food-hero::after {
   content: "";
   position: absolute;
   z-index: 0;
-  top: 104px;
-  left: -60%;
-  right: auto;
-  bottom: -10%;
-  width: 114%;
-  border-radius: 50%;
-  border: 0;
+  inset: 0;
+  display: none;
   pointer-events: none;
   opacity: .035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
@@ -59,22 +45,22 @@
 }
 
 body:has(.hero.home-food-hero) .navbar {
-  color: #21130f;
-  background: rgba(247, 235, 221, .94);
-  border-bottom-color: rgba(196, 154, 82, .3);
+  color: #f5ebdd;
+  background: rgba(18, 12, 9, .78);
+  border-bottom-color: rgba(210, 166, 90, .3);
 }
 
 body:has(.hero.home-food-hero) .nav-links a {
-  color: #21130f;
+  color: #f5ebdd;
 }
 
 body:has(.hero.home-food-hero) .nav-links .nav-number,
 body:has(.hero.home-food-hero) .nav-logo span {
-  color: #b98538;
+  color: #d2a65a;
 }
 
 body:has(.hero.home-food-hero) .nav-links a:hover {
-  color: #713a32;
+  color: #f2cc82;
 }
 
 body:has(.hero.home-food-hero) .navbar .nav-button {
@@ -162,9 +148,9 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 
 .home-food-description {
   max-width: 430px;
-  margin: 0;
+  margin: 10px 0 0;
   color: rgba(255, 247, 235, .75);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -182,7 +168,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 }
 
 .home-food-composition-entry.is-entering {
-  animation: homeFoodCompositionEnter 1600ms cubic-bezier(.22, 1, .36, 1) both;
+  animation: homeFoodCompositionEnter 850ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
 .home-food-composition-entry.is-settled {
@@ -255,8 +241,9 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   background: #fff8ec;
   opacity: .78;
   cursor: pointer;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform .225s cubic-bezier(.22, 1, .36, 1), opacity .225s ease, border-color .225s ease, box-shadow .225s ease;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+  transform-origin: center;
+  transition: transform 380ms cubic-bezier(.34, 1.56, .64, 1), opacity 250ms ease, border-color 250ms ease, box-shadow 300ms ease;
 }
 
 .hero.home-food-hero .home-food-thumbnail img {
@@ -268,11 +255,12 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 }
 
 .hero.home-food-hero .home-food-thumbnail.is-active {
-  z-index: 2;
+  z-index: 5;
   border: 2px solid #d2a65a;
   opacity: 1;
-  box-shadow: 0 0 0 5px rgba(210, 166, 90, .12);
-  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 0 0 6px rgba(210, 166, 90, .12), 0 0 24px rgba(210, 166, 90, .28), 0 12px 28px rgba(0, 0, 0, .35), inset 0 0 0 2px rgba(255, 248, 236, .18);
+  transform: translate3d(-50%, -50%, 0) scale(1.16);
+  will-change: transform;
 }
 
 .home-food-thumbnail-1 { top: 5%; left: 65%; }
@@ -310,14 +298,14 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 
 .home-food-plate-transition.is-entering {
   z-index: 2;
-  will-change: transform;
-  animation: homeFoodEnter .9s cubic-bezier(.22, .7, .25, 1) both;
+  will-change: transform, opacity;
+  animation: homeFoodEnter 600ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
 .home-food-plate-transition.is-exiting {
   z-index: 1;
-  will-change: transform;
-  animation: homeFoodExit .9s cubic-bezier(.4, 0, .2, 1) both;
+  will-change: transform, opacity;
+  animation: homeFoodExit 600ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
 .home-food-ingredient {
@@ -398,7 +386,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   min-height: 42px;
   padding: 0 14px 0 4px;
   color: #f5ebdd;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 1.2px;
   line-height: 1.45;
@@ -447,7 +435,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   min-width: 150px;
   padding: 14px 15px;
   border: 1px solid var(--home-ink);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
   text-decoration: none;
@@ -456,7 +444,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 }
 
 .hero.home-food-hero .home-food-primary {
-  color: var(--home-ink);
+  color: var(--home-ivory);
   background: var(--home-gold);
   border-color: var(--home-gold);
 }
@@ -485,8 +473,8 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 }
 
 @keyframes homeFoodEnter {
-  from { transform: translate3d(calc(-50% + 135%), -50%, 0) rotate(4deg); }
-  to { transform: translate3d(-50%, -50%, 0) rotate(0); }
+  from { opacity: 0; transform: translate3d(calc(-50% + 135%), -50%, 0); }
+  to { opacity: 1; transform: translate3d(-50%, -50%, 0); }
 }
 
 @keyframes homeFoodCompositionEnter {
@@ -495,8 +483,8 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 }
 
 @keyframes homeFoodExit {
-  from { transform: translate3d(-50%, -50%, 0) rotate(0); }
-  to { transform: translate3d(calc(-50% + 135%), -50%, 0) rotate(4deg); }
+  from { opacity: 1; transform: translate3d(-50%, -50%, 0); }
+  to { opacity: 0; transform: translate3d(calc(-50% + 135%), -50%, 0); }
 }
 
 @keyframes homeCopyEnter {
@@ -535,13 +523,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 
   .hero.home-food-hero::before,
   .hero.home-food-hero::after {
-    top: 104px;
-    left: -54%;
-    right: auto;
-    bottom: -8%;
-    width: 106%;
-    height: auto;
-    border-radius: 50%;
+    inset: 0;
   }
 
   .home-food-copy {
@@ -584,19 +566,16 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     padding: 35px 20px 26px;
     overflow: visible;
     overflow-x: clip;
-    background-color: var(--home-ivory);
-    background-image: radial-gradient(circle at 18% 10%, rgba(210, 166, 90, .08) 0%, transparent 35%);
+    background-color: #160e0a;
+    background-image: url("../assets/images/hero-dark-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .hero.home-food-hero::before,
   .hero.home-food-hero::after {
-    top: -35%;
-    right: auto;
-    bottom: -35%;
-    left: -48%;
-    width: 160%;
-    height: auto;
-    border-radius: 50%;
+    inset: 0;
   }
 
   .hero.home-food-hero::after {
@@ -623,7 +602,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 
   .home-food-description {
     max-width: 420px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.55;
   }
 
@@ -679,7 +658,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   }
 
   .hero.home-food-hero .home-food-thumbnail.is-active {
-    transform: scale(1.15);
+    transform: scale(1.16);
   }
 
   .home-food-onion {
@@ -710,7 +689,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   .home-food-highlight {
     gap: 8px;
     padding-right: 9px;
-    font-size: 7px;
+    font-size: 9px;
     letter-spacing: .7px;
   }
 
@@ -736,7 +715,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     min-width: 0;
     gap: 8px;
     padding: 14px 12px;
-    font-size: 8px;
+    font-size: 9px;
     white-space: nowrap;
   }
 }
@@ -770,8 +749,6 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     transform: none;
   }
 
-  .home-food-plate-transition.is-entering,
-  .home-food-plate-transition.is-exiting,
   .home-food-ingredient,
   .home-food-ingredient img {
     animation: none !important;
@@ -781,11 +758,14 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   .home-food-plate-transition.is-entering,
   .home-food-plate-transition.is-exiting {
     will-change: auto;
+    animation: none !important;
+    opacity: 1;
     transform: translate3d(-50%, -50%, 0);
   }
 
   .hero.home-food-hero .home-food-thumbnail {
     transition: none;
     will-change: auto;
+    animation: none;
   }
 }

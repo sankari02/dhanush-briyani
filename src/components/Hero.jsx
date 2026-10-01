@@ -17,10 +17,10 @@ const foods = [
 
 const showcaseImages = [...foods.map(({ image }) => image), onion, leaves];
 const heroPhrases = [
-  ["Dhanush", "Briyani."],
-  ["Firewood", "Flavour."],
-  ["Authentic", "Briyani."],
   ["Memorable", "Feasts."],
+  ["Firewood", "Flavour."],
+  ["Crafted for", "Celebrations."],
+  ["Authentic", "Briyani."],
 ];
 
 const preloadImage = (src) => new Promise((resolve) => {
@@ -39,7 +39,7 @@ const preloadImage = (src) => new Promise((resolve) => {
   if (image.complete) finish();
 });
 
-function HomeFoodShowcase() {
+function HomeFoodShowcase({ onFoodChange }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -54,7 +54,6 @@ function HomeFoodShowcase() {
   const isTransitioningRef = useRef(false);
   const entryReadyRef = useRef(false);
   const finishTransitionRef = useRef(null);
-
   const finishTransition = useCallback(() => {
     if (!isTransitioningRef.current || nextIndexRef.current === null) return;
     window.clearTimeout(transitionTimerRef.current);
@@ -69,7 +68,7 @@ function HomeFoodShowcase() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     autoTimerRef.current = window.setTimeout(() => {
       changeFoodRef.current(activeIndexRef.current + 1);
-    }, 2500);
+    }, 1700);
   }, []);
 
   const changeFood = useCallback((nextIndex) => {
@@ -82,9 +81,11 @@ function HomeFoodShowcase() {
       if (reduceMotion) return;
       autoTimerRef.current = window.setTimeout(() => {
         changeFoodRef.current(activeIndexRef.current + 1);
-      }, 2500);
+      }, 1700);
       return;
     }
+
+    onFoodChange(normalizedIndex);
 
     if (reduceMotion) {
       activeIndexRef.current = normalizedIndex;
@@ -100,11 +101,7 @@ function HomeFoodShowcase() {
     setNextIndex(normalizedIndex);
     setIsTransitioning(true);
     window.clearTimeout(transitionTimerRef.current);
-    transitionTimerRef.current = window.setTimeout(
-      () => finishTransitionRef.current(),
-      950,
-    );
-  }, []);
+  }, [onFoodChange]);
 
   useEffect(() => {
     let cancelled = false;
@@ -132,10 +129,8 @@ function HomeFoodShowcase() {
     if (!compositionSettled || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
 
     autoplayStartRef.current = window.setTimeout(() => {
-      autoTimerRef.current = window.setTimeout(() => {
-        changeFoodRef.current(activeIndexRef.current + 1);
-      }, 2500);
-    }, 600);
+      changeFoodRef.current(activeIndexRef.current + 1);
+    }, 550);
 
     return () => {
       window.clearTimeout(autoplayStartRef.current);
@@ -211,7 +206,10 @@ function HomeFoodShowcase() {
                   className="home-food-plate-transition is-exiting"
                   aria-hidden="true"
                   onAnimationEnd={(event) => {
-                    if (event.target === event.currentTarget && event.animationName === "homeFoodExit") {
+                    if (
+                      event.target === event.currentTarget
+                      && event.animationName === "homeFoodExit"
+                    ) {
                       finishTransitionRef.current();
                     }
                   }}
@@ -260,27 +258,16 @@ function HomeFoodShowcase() {
   );
 }
 
-function HomeFoodCopy() {
-  const [phraseIndex, setPhraseIndex] = useState(0);
+function HomeFoodCopy({ phraseIndex }) {
   const [phrasePhase, setPhrasePhase] = useState(() => (
     window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "holding" : "entering"
   ));
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
-
+    setPhrasePhase("entering");
     const holdTimer = window.setTimeout(() => setPhrasePhase("holding"), 450);
-    const exitTimer = window.setTimeout(() => setPhrasePhase("exiting"), 2250);
-    const nextPhraseTimer = window.setTimeout(() => {
-      setPhraseIndex((currentIndex) => (currentIndex + 1) % heroPhrases.length);
-      setPhrasePhase("entering");
-    }, 2650);
-
-    return () => {
-      window.clearTimeout(holdTimer);
-      window.clearTimeout(exitTimer);
-      window.clearTimeout(nextPhraseTimer);
-    };
+    return () => window.clearTimeout(holdTimer);
   }, [phraseIndex]);
 
   const phrase = heroPhrases[phraseIndex];
@@ -303,12 +290,16 @@ function HomeFoodCopy() {
 }
 
 function Hero() {
+  const [activeFoodIndex, setActiveFoodIndex] = useState(0);
+
   return (
     <section className="hero home-food-hero" id="home" aria-label="Dhanush Briyani showcase">
-      <HomeFoodCopy />
-      <HomeFoodShowcase />
+      <HomeFoodCopy phraseIndex={activeFoodIndex} />
+      <HomeFoodShowcase onFoodChange={setActiveFoodIndex} />
     </section>
   );
 }
 
 export default Hero;
+
+

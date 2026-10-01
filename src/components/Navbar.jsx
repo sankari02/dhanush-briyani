@@ -23,8 +23,8 @@ function Navbar() {
         <img className="logo-mark" src={logo} alt="" />
 
         <div>
-          <h2>Dhanush Briyani</h2>
-          <span>Authentic Firewood Briyani</span>
+          <h1>DHANUSH BRIYANI</h1>
+          <span>FOOD TRUCK & CATERING SERVICE</span>
         </div>
       </Link>
 
