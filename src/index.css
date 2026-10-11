@@ -299,7 +299,7 @@ body {
       rgba(42, 23, 16, 0.34) 52%,
       rgba(42, 23, 16, 0.02) 78%
     ),
-    url("./assets/images/dhanush-hero.png");
+    url("./assets/images/dhanush-hero.webp");
 
   background-size: cover;
   /* Keep both cooks in frame when the wide photo is cropped to the hero. */
@@ -932,7 +932,7 @@ body {
     background-image:
       linear-gradient(90deg, rgba(22, 14, 10, .88) 0%, rgba(22, 14, 10, .72) 42%, rgba(22, 14, 10, .28) 100%),
       linear-gradient(180deg, rgba(22, 14, 10, .2), transparent 48%, rgba(22, 14, 10, .36)),
-      url("./assets/images/dhanush-hero.png");
+      url("./assets/images/dhanush-hero.webp");
     background-size: cover, cover, cover;
     background-position: center, center, 68% center;
   }
@@ -1057,7 +1057,7 @@ body {
     background-color: #160e0a;
     background-image:
       linear-gradient(180deg, rgba(22, 14, 10, .48) 0%, rgba(22, 14, 10, .28) 50%, rgba(22, 14, 10, .62) 100%),
-      url("./assets/images/dhanush-hero.png");
+      url("./assets/images/dhanush-hero.webp");
     background-size: cover;
     background-position: 62% center;
     background-repeat: no-repeat;
@@ -3453,6 +3453,96 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .navbar {
+    gap: 8px;
+    padding-inline: 16px;
+  }
+
+  .nav-logo {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .logo-mark {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+  }
+
+  .nav-logo > div {
+    min-width: 0;
+  }
+
+  .nav-logo h1 {
+    overflow: visible;
+    white-space: nowrap;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    line-height: .9;
+    font-size: clamp(15px, 5vw, 20px);
+    letter-spacing: -.35px;
+  }
+
+  .nav-logo span {
+    display: block;
+    margin-top: 4px;
+    font-size: 6px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    flex: 0 0 40px;
+  }
+
+  .nav-links {
+    top: 0;
+    right: 0;
+    width: min(360px, 88vw);
+    height: 100dvh;
+    padding: 100px 32px 40px;
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform 420ms cubic-bezier(.22, 1, .36, 1), visibility 420ms;
+    z-index: 25;
+  }
+
+  .nav-links.nav-open {
+    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .navbar .menu-toggle {
+    z-index: 30;
+  }
+
+  .mobile-quotation {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 26px;
+    padding: 15px 18px !important;
+    background: #d2a65a;
+    color: #160e0a !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar { padding-inline: 12px; }
+  .nav-logo { gap: 6px; }
+  .logo-mark { width: 46px; height: 46px; flex-basis: 46px; }
+  .nav-logo h1 { font-size: 15px; letter-spacing: -.55px; }
+  .nav-logo span { font-size: 5px; letter-spacing: .75px; }
+  .menu-toggle { width: 36px; flex-basis: 36px; }
+}
+
+@media (max-width: 900px) {
+  html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
+}
+
 /* ABOUT INTRO */
 .about-intro {
   position: relative;
@@ -3827,3 +3917,4 @@ body {
   letter-spacing: 1.6px;
   text-transform: uppercase;
 }
+

@@ -73,15 +73,15 @@
 }
 .founder-index span { color: #d2a65a; font: 500 30px/.9 "Cormorant Garamond", serif; }
 .founder-index small { font: 600 8px/1.4 "Manrope", sans-serif; letter-spacing: 1.6px; }
-.founder-copy { position: relative; z-index: 1; max-width: 570px; }
-.founder-copy h2 { margin: 0 0 32px; font: 500 clamp(52px, 6.2vw, 82px)/.94 "Cormorant Garamond", serif; letter-spacing: -.035em; }
+.founder-copy { position: relative; z-index: 1; max-width: 640px; }
+.founder-copy h2 { margin: 0 0 32px; font: 500 clamp(58px, 6.8vw, 90px)/.94 "Cormorant Garamond", serif; letter-spacing: -.035em; }
 .founder-copy h2 em { color: #d2a65a; font-weight: 500; }
-.founder-identity h3 { margin: 0 0 5px; font: 500 clamp(32px, 3.4vw, 44px)/1.1 "Cormorant Garamond", serif; }
-.founder-role { margin: 0; color: #d2a65a; font: 600 9px/1.7 "Manrope", sans-serif; letter-spacing: 1.8px; }
-.founder-qualification { margin: 8px 0 0; color: rgba(255, 253, 249, .72); font: 400 12px/1.7 "Manrope", sans-serif; }
+.founder-identity h3 { margin: 0 0 5px; font: 500 clamp(36px, 3.8vw, 50px)/1.1 "Cormorant Garamond", serif; }
+.founder-role { margin: 0; color: #d2a65a; font: 600 11px/1.7 "Manrope", sans-serif; letter-spacing: 1.8px; }
+.founder-qualification { margin: 8px 0 0; color: rgba(255, 253, 249, .72); font: 400 15px/1.7 "Manrope", sans-serif; }
 .founder-divider { display: block; width: 52px; height: 1px; margin: 26px 0 20px; background: #d2a65a; }
-.founder-story { max-width: 540px; margin: 0; color: rgba(255, 253, 249, .78); font: 400 13px/1.95 "Manrope", sans-serif; }
-.founder-signoff { display: flex; align-items: center; gap: 14px; margin: 32px 0 0; color: #d2a65a; font: 600 9px/1.5 "Manrope", sans-serif; letter-spacing: 1.8px; }
+.founder-story { max-width: 600px; margin: 0; color: rgba(255, 253, 249, .78); font: 400 16px/1.85 "Manrope", sans-serif; }
+.founder-signoff { display: flex; align-items: center; gap: 14px; margin: 32px 0 0; color: #d2a65a; font: 600 11px/1.5 "Manrope", sans-serif; letter-spacing: 1.8px; }
 .founder-signoff::before { content: ""; width: 48px; height: 1px; background: rgba(210, 166, 90, .65); }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -114,5 +114,5 @@
 @media (max-width: 380px) {
   .founder-section { padding-inline: 20px; }
   .founder-portrait-frame { height: 480px; }
-  .founder-role { font-size: 8px; letter-spacing: 1.3px; }
+  .founder-role { font-size: 9px; letter-spacing: 1.3px; }
 }

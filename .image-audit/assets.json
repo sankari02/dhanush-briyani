@@ -1,0 +1,309 @@
+[
+  {
+    "source": "src/assets/about-briyani.png",
+    "original": 521873,
+    "width": 447,
+    "height": 607,
+    "optimized": 79142,
+    "output": "src/assets/about-briyani.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/about-firewood.png",
+    "original": 541440,
+    "width": 442,
+    "height": 602,
+    "optimized": 82316,
+    "output": "src/assets/about-firewood.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/hero.png",
+    "original": 13057,
+    "width": 343,
+    "height": 361,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/about-animation/bottom-red-paper.png",
+    "original": 1289097,
+    "width": 2172,
+    "height": 724,
+    "optimized": 221714,
+    "output": "src/assets/about-animation/bottom-red-paper.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/about-animation/briyani-plate.png",
+    "original": 2501372,
+    "width": 1321,
+    "height": 1191,
+    "optimized": 556082,
+    "output": "src/assets/about-animation/briyani-plate.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/about-animation/chilli.png",
+    "original": 1985925,
+    "width": 1536,
+    "height": 1024,
+    "optimized": 100416,
+    "output": "src/assets/about-animation/chilli.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/about-animation/leaves.png",
+    "original": 2635419,
+    "width": 1536,
+    "height": 1024,
+    "optimized": 207316,
+    "output": "src/assets/about-animation/leaves.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/about-animation/onion.png",
+    "original": 2399535,
+    "width": 1536,
+    "height": 1024,
+    "optimized": 113150,
+    "output": "src/assets/about-animation/onion.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/about-animation/top-red-paper.png",
+    "original": 958522,
+    "width": 2172,
+    "height": 724,
+    "optimized": 183476,
+    "output": "src/assets/about-animation/top-red-paper.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/hero-motion/chicken-briyani.png",
+    "original": 2501372,
+    "width": 1321,
+    "height": 1191,
+    "optimized": 581694,
+    "output": "src/assets/hero-motion/chicken-briyani.webp",
+    "status": "optimized",
+    "mobile": 251560,
+    "mobileOutput": "src/assets/hero-motion/chicken-briyani-800.webp"
+  },
+  {
+    "source": "src/assets/hero-motion/chicken65-briyani.png",
+    "original": 2416178,
+    "width": 1322,
+    "height": 1190,
+    "optimized": 545934,
+    "output": "src/assets/hero-motion/chicken65-briyani.webp",
+    "status": "optimized",
+    "mobile": 248572,
+    "mobileOutput": "src/assets/hero-motion/chicken65-briyani-800.webp"
+  },
+  {
+    "source": "src/assets/hero-motion/chicken65.png",
+    "original": 2452997,
+    "width": 1322,
+    "height": 1190,
+    "optimized": 564604,
+    "output": "src/assets/hero-motion/chicken65.webp",
+    "status": "optimized",
+    "mobile": 247032,
+    "mobileOutput": "src/assets/hero-motion/chicken65-800.webp"
+  },
+  {
+    "source": "src/assets/hero-motion/chilli.png",
+    "original": 1985925,
+    "width": 1536,
+    "height": 1024,
+    "optimized": 100416,
+    "output": "src/assets/hero-motion/chilli.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/hero-motion/leaves.png",
+    "original": 2635419,
+    "width": 1536,
+    "height": 1024,
+    "optimized": 207316,
+    "output": "src/assets/hero-motion/leaves.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/hero-motion/mutton-briyani.png",
+    "original": 2417691,
+    "width": 1321,
+    "height": 1191,
+    "optimized": 547380,
+    "output": "src/assets/hero-motion/mutton-briyani.webp",
+    "status": "optimized",
+    "mobile": 240300,
+    "mobileOutput": "src/assets/hero-motion/mutton-briyani-800.webp"
+  },
+  {
+    "source": "src/assets/hero-motion/onion.png",
+    "original": 2399535,
+    "width": 1536,
+    "height": 1024,
+    "optimized": 113150,
+    "output": "src/assets/hero-motion/onion.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/about-banner-briyani.png",
+    "original": 2499521,
+    "width": 2048,
+    "height": 768,
+    "optimized": 339838,
+    "output": "src/assets/images/about-banner-briyani.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/birthday-catering.png",
+    "original": 14914,
+    "width": 500,
+    "height": 333,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/corporate-catering.png",
+    "original": 26928,
+    "width": 500,
+    "height": 333,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/db log.png",
+    "original": 6147358,
+    "width": 3904,
+    "height": 3904,
+    "optimized": 82190,
+    "output": "src/assets/images/db log.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/Dhanush Briyani poster.png",
+    "original": 1971795,
+    "width": 1122,
+    "height": 1402,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/Dhanush Briyani shop.png",
+    "original": 2655671,
+    "width": 1448,
+    "height": 1086,
+    "optimized": 435854,
+    "output": "src/assets/images/Dhanush Briyani shop.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/dhanush-founder.png",
+    "original": 2391646,
+    "width": 1184,
+    "height": 1328,
+    "optimized": 284972,
+    "output": "src/assets/images/dhanush-founder.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/dhanush-google-review-qr.jpeg",
+    "original": 379417,
+    "width": 1600,
+    "height": 1600,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/dhanush-hero.png",
+    "original": 1903716,
+    "width": 1672,
+    "height": 941,
+    "optimized": 231034,
+    "output": "src/assets/images/dhanush-hero.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/Engagement & Reception.jpg",
+    "original": 160457,
+    "width": 736,
+    "height": 920,
+    "optimized": 229284,
+    "output": "src/assets/images/Engagement & Reception.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/hero-dark-background.png",
+    "original": 1963699,
+    "width": 1672,
+    "height": 941,
+    "optimized": 179618,
+    "output": "src/assets/images/hero-dark-background.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/spice-bowl-left.png",
+    "original": 1726278,
+    "width": 1536,
+    "height": 1024,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/spice-bowl-right.png",
+    "original": 2038713,
+    "width": 1536,
+    "height": 1024,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/wedding-catering.png",
+    "original": 28690,
+    "width": 500,
+    "height": 333,
+    "status": "preserved (unused, already small, or QR code)"
+  },
+  {
+    "source": "src/assets/images/why-catering.png",
+    "original": 2313113,
+    "width": 1448,
+    "height": 1086,
+    "optimized": 337374,
+    "output": "src/assets/images/why-catering.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/why-firewood.png",
+    "original": 2332060,
+    "width": 1672,
+    "height": 941,
+    "optimized": 332970,
+    "output": "src/assets/images/why-firewood.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/why-fresh-prep.png",
+    "original": 2379705,
+    "width": 1395,
+    "height": 1127,
+    "optimized": 323170,
+    "output": "src/assets/images/why-fresh-prep.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/why-ingredients.png",
+    "original": 2846053,
+    "width": 1395,
+    "height": 1127,
+    "optimized": 488822,
+    "output": "src/assets/images/why-ingredients.webp",
+    "status": "optimized"
+  },
+  {
+    "source": "src/assets/images/why-natural-cooking.png",
+    "original": 2267915,
+    "width": 1672,
+    "height": 941,
+    "optimized": 300402,
+    "output": "src/assets/images/why-natural-cooking.webp",
+    "status": "optimized"
+  }
+]

@@ -2,7 +2,7 @@ function OurStory() {
   return (
     <section className="our-story" id="our-story">
       <div className="story-image-wrap">
-        <img
+        <img decoding="async" loading="lazy"
           src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=90"
           alt="Traditional food preparation"
         />

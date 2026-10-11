@@ -8,3 +8,7 @@
   .contact-reveal .quotation-right { transform: translateX(35px); }
   .contact-reveal .contact-panel-visible, .contact-reveal:focus-within .quotation-left, .contact-reveal:focus-within .quotation-right { opacity: 1; transform: none; }
 }
+/* Keep the compact phone form readable even if its reveal observer is skipped. */
+@media (max-width: 767px) {
+  .contact-reveal .quotation-right { opacity: 1; transform: none; }
+}

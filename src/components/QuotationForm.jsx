@@ -80,7 +80,7 @@ Thank you.`;
         <div className="quotation-right">
           <form className="quotation-form" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
-              <label htmlFor="quotation-name">Customer Name</label>
+              <label htmlFor="quotation-name" className="customer-name-label">CUSTOMER NAME</label>
               <input
                 type="text"
                 id="quotation-name"
@@ -93,7 +93,7 @@ Thank you.`;
             </div>
 
             <div className="form-group">
-              <label htmlFor="quotation-phone">Phone Number</label>
+              <label htmlFor="quotation-phone">PHONE NUMBER</label>
               <input
                 type="tel"
                 id="quotation-phone"

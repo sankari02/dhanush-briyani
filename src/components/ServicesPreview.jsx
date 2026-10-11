@@ -43,7 +43,7 @@ export default function ServicesPreview() {
           {servicePreviews.map((service, index) => (
             <article className="db-services-preview-item" key={service.id} style={{ "--service-delay": `${index * 120}ms` }}>
               <Link className="db-services-preview-link" to={`/services#${service.id}`}>
-                <div className="db-services-photo"><img src={service.image} alt={service.alt} loading="lazy" width="800" height="620" /></div>
+                <div className="db-services-photo"><img decoding="async" src={service.image} alt={service.alt} loading="lazy" width="800" height="620" /></div>
                 <div className="db-services-item-meta"><span>0{index + 1}</span><span className="db-services-rule" /></div>
                 <h3>{service.title}</h3>
                 <p className="db-services-copy">{service.text}</p>

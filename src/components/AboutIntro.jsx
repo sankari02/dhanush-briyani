@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import plateImage from "../assets/about-animation/briyani-plate.png";
-import onionImage from "../assets/about-animation/onion.png";
-import chilliImage from "../assets/about-animation/chilli.png";
-import leavesImage from "../assets/about-animation/leaves.png";
-import topPaperImage from "../assets/about-animation/top-red-paper.png";
-import bottomPaperImage from "../assets/about-animation/bottom-red-paper.png";
+import plateImage from "../assets/about-animation/briyani-plate.webp";
+import onionImage from "../assets/about-animation/onion.webp";
+import chilliImage from "../assets/about-animation/chilli.webp";
+import leavesImage from "../assets/about-animation/leaves.webp";
+import topPaperImage from "../assets/about-animation/top-red-paper.webp";
+import bottomPaperImage from "../assets/about-animation/bottom-red-paper.webp";
 
 const highlights = [
   { title: "2 Years", caption: "Serving with Passion", icon: "flame" },
@@ -128,16 +128,16 @@ function AboutIntro() {
       <div className="about-intro-inner">
         <div className="about-intro-images">
           <div ref={animationRef} className="about-food-composition" aria-hidden="true">
-            <div className="about-food-layer about-food-paper about-food-paper-top"><img src={topPaperImage} alt="" /></div>
+            <div className="about-food-layer about-food-paper about-food-paper-top"><img decoding="async" loading="lazy" src={topPaperImage} alt="" /></div>
             <span className="about-food-word about-food-word-dhanush">DHANUSH</span>
             <span className="about-food-word about-food-word-briyani">BRIYANI</span>
-            <div className="about-food-layer about-food-onion"><div className="about-food-float about-food-onion-float"><img src={onionImage} alt="" /></div></div>
-            <div className="about-food-layer about-food-chilli"><div className="about-food-float about-food-chilli-float"><img src={chilliImage} alt="" /></div></div>
+            <div className="about-food-layer about-food-onion"><div className="about-food-float about-food-onion-float"><img decoding="async" loading="lazy" src={onionImage} alt="" /></div></div>
+            <div className="about-food-layer about-food-chilli"><div className="about-food-float about-food-chilli-float"><img decoding="async" loading="lazy" src={chilliImage} alt="" /></div></div>
             <div className="about-food-plate-position">
-              <div className="about-food-plate-scroll"><div className="about-food-plate-float"><img src={plateImage} alt="" /></div></div>
+              <div className="about-food-plate-scroll"><div className="about-food-plate-float"><img decoding="async" loading="lazy" src={plateImage} alt="" /></div></div>
             </div>
-            <div className="about-food-layer about-food-leaves"><div className="about-food-float about-food-leaves-float"><img src={leavesImage} alt="" /></div></div>
-            <div className="about-food-layer about-food-paper about-food-paper-bottom"><img src={bottomPaperImage} alt="" /></div>
+            <div className="about-food-layer about-food-leaves"><div className="about-food-float about-food-leaves-float"><img decoding="async" loading="lazy" src={leavesImage} alt="" /></div></div>
+            <div className="about-food-layer about-food-paper about-food-paper-bottom"><img decoding="async" loading="lazy" src={bottomPaperImage} alt="" /></div>
           </div>
         </div>
 

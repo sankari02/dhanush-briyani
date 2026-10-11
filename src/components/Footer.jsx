@@ -1,6 +1,6 @@
 ﻿import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/db log.png";
+import logo from "../assets/images/db log.webp";
 import { services } from "../data/services";
 import "./Footer.css";
 
@@ -61,7 +61,7 @@ export default function Footer() {
       <div className="db-footer-inner">
         <div className="db-footer-grid">
           <div className="db-footer-column db-footer-brand">
-            <Link to="/" className="db-footer-brand-link" aria-label="Dhanush Briyani home"><img src={logo} alt="" width="70" height="70" loading="lazy" /><h2>Dhanush<br />Briyani</h2></Link>
+            <Link to="/" className="db-footer-brand-link" aria-label="Dhanush Briyani home"><img decoding="async" src={logo} alt="" width="70" height="70" loading="lazy" /><h2>Dhanush<br />Briyani</h2></Link>
             <p className="db-footer-tagline">AUTHENTIC FIREWOOD BRIYANI</p>
             <p className="db-footer-description">Authentic firewood-cooked briyani and thoughtful catering crafted for celebrations worth remembering.</p>
             <div className="db-footer-socials">

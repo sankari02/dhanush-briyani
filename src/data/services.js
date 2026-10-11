@@ -1,5 +1,5 @@
-import briyani from "../assets/about-briyani.png";
-import firewood from "../assets/about-firewood.png";
+import briyani from "../assets/about-briyani.webp";
+import firewood from "../assets/about-firewood.webp";
 import weddingEvent from "../assets/images/wedding-catering.png";
 import corporateEvent from "../assets/images/corporate-catering.png";
 import birthdayEvent from "../assets/images/birthday-catering.png";

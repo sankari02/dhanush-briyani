@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import muttonBriyani from "../assets/hero-motion/mutton-briyani.png";
-import chickenBriyani from "../assets/hero-motion/chicken-briyani.png";
-import chicken65Briyani from "../assets/hero-motion/chicken65-briyani.png";
-import chicken65 from "../assets/hero-motion/chicken65.png";
-import onion from "../assets/hero-motion/onion.png";
-import leaves from "../assets/hero-motion/leaves.png";
+import { heroImageSources } from "../heroImageSources";
+import muttonBriyani from "../assets/hero-motion/mutton-briyani.webp";
+import chickenBriyani from "../assets/hero-motion/chicken-briyani.webp";
+import chicken65Briyani from "../assets/hero-motion/chicken65-briyani.webp";
+import chicken65 from "../assets/hero-motion/chicken65.webp";
+import onion from "../assets/hero-motion/onion.webp";
+import leaves from "../assets/hero-motion/leaves.webp";
 import "./Hero.css";
 
 const foods = [
@@ -17,10 +18,10 @@ const foods = [
 
 const showcaseImages = [...foods.map(({ image }) => image), onion, leaves];
 const heroPhrases = [
-  ["Memorable", "Feasts."],
-  ["Firewood", "Flavour."],
   ["DHANUSH BRIYANI."],
   ["Briyani is emotion!"],
+  ["Memorable", "Feasts."],
+  ["Firewood", "Flavour."],
 ];
 
 const preloadImage = (src) => new Promise((resolve) => {
@@ -35,6 +36,13 @@ const preloadImage = (src) => new Promise((resolve) => {
 
   image.onload = finish;
   image.onerror = resolve;
+  const sources = heroImageSources(src);
+  image.decoding = "async";
+  image.fetchPriority = src === muttonBriyani ? "high" : "auto";
+  if (sources.srcSet) {
+    image.sizes = sources.sizes;
+    image.srcset = sources.srcSet;
+  }
   image.src = src;
   if (image.complete) finish();
 });
@@ -48,7 +56,6 @@ function HomeFoodShowcase({ onFoodChange }) {
   const autoTimerRef = useRef(null);
   const autoplayStartRef = useRef(null);
   const changeFoodRef = useRef(null);
-  const transitionTimerRef = useRef(null);
   const activeIndexRef = useRef(currentIndex);
   const nextIndexRef = useRef(null);
   const isTransitioningRef = useRef(false);
@@ -56,7 +63,6 @@ function HomeFoodShowcase({ onFoodChange }) {
   const finishTransitionRef = useRef(null);
   const finishTransition = useCallback(() => {
     if (!isTransitioningRef.current || nextIndexRef.current === null) return;
-    window.clearTimeout(transitionTimerRef.current);
     const completedIndex = nextIndexRef.current;
     activeIndexRef.current = completedIndex;
     nextIndexRef.current = null;
@@ -100,7 +106,6 @@ function HomeFoodShowcase({ onFoodChange }) {
     nextIndexRef.current = normalizedIndex;
     setNextIndex(normalizedIndex);
     setIsTransitioning(true);
-    window.clearTimeout(transitionTimerRef.current);
   }, [onFoodChange]);
 
   useEffect(() => {
@@ -119,7 +124,6 @@ function HomeFoodShowcase({ onFoodChange }) {
       cancelled = true;
       window.clearTimeout(autoTimerRef.current);
       window.clearTimeout(autoplayStartRef.current);
-      window.clearTimeout(transitionTimerRef.current);
     };
   }, []);
 
@@ -169,13 +173,13 @@ function HomeFoodShowcase({ onFoodChange }) {
       >
         <div className="home-food-stage">
           <div className="home-food-ingredient home-food-onion" aria-hidden="true">
-            <img src={onion} alt="" />
+            <img src={onion} alt="" loading="eager" decoding="async" />
           </div>
           <div className="home-food-ingredient home-food-onion-front" aria-hidden="true">
-            <img src={onion} alt="" />
+            <img src={onion} alt="" loading="eager" decoding="async" />
           </div>
           <div className="home-food-ingredient home-food-leaves" aria-hidden="true">
-            <img src={leaves} alt="" />
+            <img src={leaves} alt="" loading="eager" decoding="async" />
           </div>
 
           <div className="home-food-orbit" role="group" aria-label="Choose featured food">
@@ -193,7 +197,7 @@ function HomeFoodShowcase({ onFoodChange }) {
                 onClick={() => changeFood(index)}
                 onKeyDown={(event) => handleSelectorKeyDown(event, index)}
               >
-                <img src={food.image} alt="" />
+                <img src={food.image} {...heroImageSources(food.image)} alt="" loading="eager" decoding="async" />
               </button>
             ))}
           </div>
@@ -214,19 +218,19 @@ function HomeFoodShowcase({ onFoodChange }) {
                     }
                   }}
                 >
-                  <img className="home-food-plate-image" src={activeFood.image} alt="" />
+                  <img className="home-food-plate-image" src={activeFood.image} {...heroImageSources(activeFood.image)} alt="" loading="eager" decoding="async" />
                 </div>
                 <div
                   key={`incoming-${nextIndex}`}
                   className="home-food-plate-transition is-entering"
                   aria-hidden="true"
                 >
-                  <img className="home-food-plate-image" src={foods[nextIndex].image} alt="" fetchPriority="high" />
+                  <img className="home-food-plate-image" src={foods[nextIndex].image} {...heroImageSources(foods[nextIndex].image)} alt="" loading="eager" decoding="async" />
                 </div>
               </>
             ) : (
               <div key={`current-${currentIndex}`} className="home-food-plate-transition is-current">
-                <img className="home-food-plate-image" src={activeFood.image} alt={activeFood.name} fetchPriority="high" />
+                <img className="home-food-plate-image" src={activeFood.image} {...heroImageSources(activeFood.image)} alt={activeFood.name} loading="eager" decoding="async" fetchPriority={currentIndex === 0 ? "high" : "auto"} />
               </div>
             )}
           </div>
@@ -259,24 +263,13 @@ function HomeFoodShowcase({ onFoodChange }) {
 }
 
 function HomeFoodCopy({ phraseIndex }) {
-  const [phrasePhase, setPhrasePhase] = useState(() => (
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "holding" : "entering"
-  ));
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
-    setPhrasePhase("entering");
-    const holdTimer = window.setTimeout(() => setPhrasePhase("holding"), 450);
-    return () => window.clearTimeout(holdTimer);
-  }, [phraseIndex]);
-
   const phrase = heroPhrases[phraseIndex];
 
   return (
     <div className="home-food-copy">
       <p className="home-food-eyebrow">Authentic Firewood Briyani</p>
       <h1 className="home-food-heading">
-        <span key={phraseIndex} className={`home-food-heading-phrase is-${phrasePhase}`}>
+        <span key={phraseIndex} className="home-food-heading-phrase is-entering">
           <span>{phrase[0]}</span>
           <span className="home-food-heading-italic">{phrase[1]}</span>
         </span>

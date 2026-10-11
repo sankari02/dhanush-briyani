@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import firewoodPhoto from "../assets/images/why-firewood.png";
-import cateringPhoto from "../assets/images/why-catering.png";
-import freshPrepPhoto from "../assets/images/why-fresh-prep.png";
-import ingredientsPhoto from "../assets/images/why-ingredients.png";
-import naturalCookingPhoto from "../assets/images/why-natural-cooking.png";
+import firewoodPhoto from "../assets/images/why-firewood.webp";
+import cateringPhoto from "../assets/images/why-catering.webp";
+import freshPrepPhoto from "../assets/images/why-fresh-prep.webp";
+import ingredientsPhoto from "../assets/images/why-ingredients.webp";
+import naturalCookingPhoto from "../assets/images/why-natural-cooking.webp";
 import "./WhyChooseDhanush.css";
 
 const promisePhotos = [

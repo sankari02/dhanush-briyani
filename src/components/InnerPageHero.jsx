@@ -1,6 +1,6 @@
 ﻿import { useId } from "react";
 import { Link } from "react-router-dom";
-import bannerImage from "../assets/images/about-banner-briyani.png";
+import bannerImage from "../assets/images/about-banner-briyani.webp";
 import "../pages/About.css";
 import "./InnerPageHero.css";
 

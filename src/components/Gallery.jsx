@@ -48,7 +48,7 @@ function Gallery() {
             className={`gallery-item ${image.className || ""}`}
             key={index}
           >
-            <img src={image.src} alt={image.alt} />
+            <img decoding="async" loading="lazy" src={image.src} alt={image.alt} />
           </div>
         ))}
       </div>

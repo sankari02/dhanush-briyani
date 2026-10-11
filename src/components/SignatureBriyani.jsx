@@ -2,7 +2,7 @@ function SignatureBriyani() {
   return (
     <section className="signature-section">
       <div className="signature-image">
-        <img
+        <img decoding="async" loading="lazy"
           src="https://images.unsplash.com/photo-1701579231305-d84d8af9a3fd?auto=format&fit=crop&w=1400&q=90"
           alt="Dhanush Firewood Briyani"
         />

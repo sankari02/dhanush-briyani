@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import founderImage from "../assets/images/dhanush-founder.png";
+import founderImage from "../assets/images/dhanush-founder.webp";
 import "./FounderSection.css";
 
 function FounderSection() {
@@ -33,7 +33,7 @@ function FounderSection() {
         <div className="founder-layout">
           <div className="founder-visual">
             <div className="founder-portrait-frame">
-              <img src={founderImage} alt="Dhanush, founder of Dhanush Briyani" loading="lazy" />
+              <img decoding="async" src={founderImage} alt="Dhanush, founder of Dhanush Briyani" loading="lazy" />
             </div>
             <div className="founder-index" aria-hidden="true">
               <span>01</span>
@@ -46,7 +46,7 @@ function FounderSection() {
             <div className="founder-identity">
               <h3>Mr.Dhanush</h3>
               <p className="founder-role">FOUNDER — DHANUSH BRIYANI</p>
-              <p className="founder-qualification">B.Sc. Computer Science</p>
+              <p className="founder-qualification">B.Com., LL.B.</p>
             </div>
             <span className="founder-divider" aria-hidden="true" />
             <p className="founder-story">

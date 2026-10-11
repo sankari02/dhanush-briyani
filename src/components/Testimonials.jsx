@@ -71,7 +71,7 @@ export default function Testimonials() {
           <p className="db-reviews-cta-steps">SCAN <span>•</span> RATE <span>•</span> REVIEW</p>
         </div>
         <div className="db-reviews-qr-wrap">
-          <img className="db-reviews-qr" src={reviewQr} alt="QR code to share a review for Dhanush Briyani on Google" />
+          <img decoding="async" loading="lazy" className="db-reviews-qr" src={reviewQr} alt="QR code to share a review for Dhanush Briyani on Google" />
           <p className="db-reviews-qr-title">Scan to Review</p>
           <p className="db-reviews-qr-subtitle">Google Reviews</p>
         </div>

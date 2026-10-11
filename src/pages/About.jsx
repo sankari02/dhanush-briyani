@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import EventMarquee from "../components/EventMarquee";
-import bannerImage from "../assets/images/why-firewood.png";
-import shopImage from "../assets/images/Dhanush Briyani shop.png";
+import bannerImage from "../assets/images/why-firewood.webp";
+import shopImage from "../assets/images/Dhanush Briyani shop.webp";
 import FounderSection from "../components/FounderSection";
 import { useEffect, useRef } from "react";
 import "./About.css";
@@ -38,7 +38,7 @@ function About() {
 
         <section ref={shopStoryRef} className="about-page-intro about-page-container about-page-section" aria-labelledby="about-introduction-heading">
           <figure className="about-shop-photo">
-            <img src={shopImage} alt="The Dhanush Briyani shop in the evening, with its signboard and customers" loading="lazy" />
+            <img decoding="async" src={shopImage} alt="The Dhanush Briyani shop in the evening, with its signboard and customers" loading="eager" />
           </figure>
           <div className="about-shop-copy">
             <p className="about-page-label">OUR SHOP</p>
@@ -74,7 +74,7 @@ function About() {
             <p className="about-page-copy">From the ingredients we select to the care we take at the stove, our focus stays on authentic flavour and a meal made for your celebration.</p>
           </div>
           <figure>
-            <img src={bannerImage} alt="Briyani and firewood, at the heart of our cooking tradition" loading="lazy" />
+            <img decoding="async" src={bannerImage} alt="Briyani and firewood, at the heart of our cooking tradition" loading="lazy" />
             <figcaption>CASUARINA WOOD. AUTHENTIC FIREWOOD COOKING.</figcaption>
           </figure>
         </section>

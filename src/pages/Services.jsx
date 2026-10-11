@@ -7,9 +7,9 @@ import EventMarquee from "../components/EventMarquee";
 import weddingImage from "../assets/images/wedding-catering.png";
 import engagementImage from "../assets/images/Engagement & Reception.jpg";
 import birthdayImage from "../assets/images/birthday-catering.png";
-import familyImage from "../assets/images/why-catering.png";
+import familyImage from "../assets/images/why-catering.webp";
 import corporateImage from "../assets/images/corporate-catering.png";
-import bulkImage from "../assets/images/why-firewood.png";
+import bulkImage from "../assets/images/why-firewood.webp";
 import "../components/Services.css";
 
 const cateringServices = [
@@ -52,7 +52,7 @@ function CateringServices() {
         <div className="catering-card-grid" ref={gridRef}>
           {cateringServices.map((service, index) => (
             <article className="catering-card" key={service.id} style={{ "--card-delay": `${(index % 3) * 100}ms` }}>
-              <div className="catering-card-image"><img src={service.image} alt={service.alt} loading="lazy" width="1200" height="900" /></div>
+              <div className="catering-card-image"><img decoding="async" src={service.image} alt={service.alt} loading="lazy" width="1200" height="900" /></div>
               <span className="catering-card-goldline" aria-hidden="true" />
               <div className="catering-card-content">
                 <span className="catering-card-number">0{index + 1}</span>

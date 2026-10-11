@@ -14,7 +14,7 @@
   overflow-x: clip;
   color: var(--home-ivory);
   background-color: #160e0a;
-  background-image: url("../assets/images/hero-dark-background.png");
+  background-image: url("../assets/images/hero-dark-background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -558,6 +558,9 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 }
 
 @media (max-width: 600px) {
+  body:has(.hero.home-food-hero) .navbar .nav-logo h1 { color: #f5ebdd; }
+  body:has(.hero.home-food-hero) .navbar .menu-toggle span { background: #d2a65a; }
+
   .hero.home-food-hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -567,7 +570,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     overflow: visible;
     overflow-x: clip;
     background-color: #160e0a;
-    background-image: url("../assets/images/hero-dark-background.png");
+    background-image: url("../assets/images/hero-dark-background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -586,6 +589,7 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     grid-column: 1;
     grid-row: 1;
     max-width: none;
+    min-width: 0;
     padding: 0 2px 4px;
   }
 
@@ -597,13 +601,15 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
 
   .home-food-copy h1 {
     margin-bottom: 15px;
-    font-size: clamp(46px, 14vw, 68px);
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: .94;
   }
 
   .home-food-description {
-    max-width: 420px;
+    width: 100%;
+    max-width: 340px;
     font-size: 14px;
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .home-food-stage {
@@ -622,43 +628,49 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   }
 
   .home-food-plate-viewport {
-    inset: 0 0 70px;
+    inset: 0;
   }
 
   .home-food-plate-transition {
     top: 50%;
     left: 50%;
-    width: min(82vw, 400px);
-    max-height: 96%;
+    width: clamp(260px, 78vw, 320px);
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .home-food-orbit {
-    inset: auto 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: auto;
-    height: 62px;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .home-food-orbit-path {
-    display: none;
+    display: block;
+    inset: 4% 3%;
+    width: 94%;
+    height: 92%;
   }
 
   .hero.home-food-hero .home-food-thumbnail,
   .hero.home-food-hero .home-food-thumbnail.is-active {
     position: relative;
-    top: auto;
-    left: auto;
-    flex: 0 0 56px;
-    width: 56px;
+    position: absolute;
+    flex: 0 0 52px;
+    width: 52px;
     padding: 3px;
-    transform: scale(.88);
+    transform: translate3d(-50%, -50%, 0) scale(.92);
+    will-change: transform;
   }
 
+  .hero.home-food-hero .home-food-thumbnail-1 { top: 5%; left: 65%; }
+  .hero.home-food-hero .home-food-thumbnail-2 { top: 33%; left: 35%; }
+  .hero.home-food-hero .home-food-thumbnail-3 { top: 67%; left: 27%; }
+  .hero.home-food-hero .home-food-thumbnail-4 { top: 95%; left: 59%; }
+
   .hero.home-food-hero .home-food-thumbnail.is-active {
-    transform: scale(1.16);
+    z-index: 6;
+    transform: translate3d(-50%, -50%, 0) scale(1.12);
   }
 
   .home-food-onion {
@@ -684,13 +696,15 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     grid-row: 3;
     gap: 18px;
     padding: 0 2px;
+    min-width: 0;
   }
 
   .home-food-highlight {
-    gap: 8px;
-    padding-right: 9px;
-    font-size: 9px;
-    letter-spacing: .7px;
+    gap: 5px;
+    padding: 0 5px 0 2px;
+    font-size: 8px;
+    letter-spacing: .35px;
+    overflow-wrap: anywhere;
   }
 
   .home-food-highlight-mark {
@@ -705,31 +719,110 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
   }
 
   .home-food-actions {
-    flex-wrap: nowrap;
-    gap: 9px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .hero.home-food-hero .home-food-primary,
   .hero.home-food-hero .home-food-secondary {
     flex: 1 1 0;
     min-width: 0;
-    gap: 8px;
-    padding: 14px 12px;
-    font-size: 9px;
-    white-space: nowrap;
+    gap: 6px;
+    padding: 13px 9px;
+    font-size: 8px;
+    letter-spacing: .5px;
+    white-space: normal;
   }
 }
 
 @media (max-width: 360px) {
   .hero.home-food-hero {
-    padding-inline: 16px;
+    padding: 28px 16px 24px;
   }
+
+  .home-food-eyebrow { font-size: 8px; letter-spacing: 1.8px; }
+  .home-food-copy h1 { font-size: 42px; }
+  .home-food-highlight { font-size: 7px; }
+  .hero.home-food-hero .home-food-thumbnail,
+  .hero.home-food-hero .home-food-thumbnail.is-active { width: 48px; flex-basis: 48px; }
 
   .hero.home-food-hero .home-food-primary,
   .hero.home-food-hero .home-food-secondary {
     padding-inline: 8px;
     font-size: 7px;
   }
+}
+
+@media (max-width: 767px) {
+  .home-food-orbit {
+    display: none;
+    inset: 0;
+    z-index: auto;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .home-food-orbit-path {
+    display: block;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .home-food-orbit-path path {
+    d: path("M 18 8 C 10 15, 7 25, 7 35 C 5 45, 2 55, 2 65 C 4 76, 12 86, 16 92");
+    fill: none;
+    stroke: #d2a65a;
+    stroke-width: 2;
+    stroke-dasharray: 6 10;
+    stroke-linecap: round;
+    opacity: .7;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .hero.home-food-hero .home-food-thumbnail,
+  .hero.home-food-hero .home-food-thumbnail.is-active {
+    position: absolute;
+    top: auto;
+    left: auto;
+    flex: 0 0 clamp(42px, 12vw, 50px);
+    width: clamp(42px, 12vw, 50px);
+    aspect-ratio: 1;
+    height: auto;
+    padding: 3px;
+    border: 2px solid rgba(245, 235, 221, .65);
+    opacity: .72;
+    pointer-events: auto;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transform-origin: center center;
+    transition: transform 260ms cubic-bezier(.22, 1, .36, 1), opacity 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+    transform-origin: center;
+    z-index: 4;
+  }
+
+  /* A compact C-shaped orbit follows the left edge of the plate stage. */
+  .hero.home-food-hero .home-food-thumbnail-1 { top: 8%; left: 18%; }
+  .hero.home-food-hero .home-food-thumbnail-2 { top: 35%; left: 7%; }
+  .hero.home-food-hero .home-food-thumbnail-3 { top: 65%; left: 2%; }
+  .hero.home-food-hero .home-food-thumbnail-4 { top: 92%; left: 16%; }
+
+  .hero.home-food-hero .home-food-thumbnail.is-active {
+    z-index: 10;
+    border-color: #d2a65a;
+    opacity: 1;
+    box-shadow: 0 0 0 5px rgba(210, 166, 90, .14), 0 6px 18px rgba(0, 0, 0, .28);
+    transform: translate3d(-50%, -50%, 0) scale(1.22);
+    will-change: transform;
+  }
+
+  .home-food-plate-viewport { z-index: 2; }
+  .home-food-onion,
+  .home-food-onion-front,
+  .home-food-leaves { z-index: 3; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -769,3 +862,4 @@ body:has(.hero.home-food-hero) .navbar .nav-button:hover .nav-button-arrow {
     animation: none;
   }
 }
+
