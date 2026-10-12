@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import CursorFollower from "./components/CursorFollower";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
+import RouteMetadata from "./components/RouteMetadata";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
@@ -9,6 +10,7 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <>
+      <RouteMetadata />
       <CursorFollower />
       <ScrollToTop />
       <Routes>
