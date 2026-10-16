@@ -51,7 +51,7 @@ Event Location: ${formData.location}
 Please share the catering details.
 
 Thank you.`;
-    const whatsappUrl = `https://wa.me/8098878889?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/918098878889?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
